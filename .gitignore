@@ -12,9 +12,8 @@ results/
 results_grid_search/
 results_grid_search_theta/
 results_analysis/
-output/
 dataset/
-*.h5
+paper_work/
 *.pth
 *.pkl
 *.npz
