@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code
+.vscode/
+.history/
+
+# Data and Results (Large files)
+results/
+results_grid_search/
+results_grid_search_theta/
+results_analysis/
+output/
+dataset/
+*.h5
+*.pth
+*.pkl
+*.npz
+
+# Generated Figures
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Latex aux files
+# Do NOT ignore the whole folder, just generated files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.bbl
+*.blg
+*.out

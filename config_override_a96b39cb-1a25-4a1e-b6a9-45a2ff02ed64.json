@@ -1,0 +1,1 @@
+{"target_subject": "S013", "lambda_mmd": 0.5, "learning_rate": 0.001, "encoder_layers": [128, 64], "decoder_layers": [32], "dropout": 0.2, "results_dir": "d:/RSC lab/Codes/Stroke_SDA/results_grid_search_theta\\S013_L0.5_LR0.001_E128_D32_Dr0.2", "max_folds": 1, "epochs": 100, "patience": 5, "batch_size": 64, "modes": ["SDA"], "feature_set": "theta"}

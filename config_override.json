@@ -1,0 +1,1 @@
+{"target_subject": "S003", "lambda_mmd": 0.1, "learning_rate": 0.0001, "encoder_layers": [64, 32], "decoder_layers": [32], "dropout": 0.4, "results_dir": "d:/RSC lab/Codes/Stroke_SDA/results_grid_search\\S003_L0.1_LR0.0001_E64_D32_Dr0.4", "max_folds": 1, "epochs": 100, "patience": 5, "batch_size": 64, "modes": ["SDA"]}

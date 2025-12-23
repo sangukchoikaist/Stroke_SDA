@@ -1,0 +1,319 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts                              % This command is only needed if 
+                                                          % you want to use the \thanks command
+
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+%In case you encounter the following error:
+%Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
+%Error 1000 An error occurred while parsing a contents stream. Unable to analyze the PDF file.
+%This is a known problem with pdfLaTeX conversion filter. The file cannot be opened with acrobat reader
+%Please use one of the alternatives below to circumvent this error by uncommenting one or the other
+%\pdfobjcompresslevel=0
+%\pdfminorversion=4
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+\usepackage{mathptmx} % assumes new font selection scheme installed
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+%\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{kotex}
+\title{\LARGE \bf
+Personalized Gait Phase Estimation for Post-Stroke Individuals via Supervised Domain Adaptation with Limited Gait Data}
+
+
+\author{Sanguk Choi$^{1}$ and Kyoungchul Kong$^{1}$% <-this % stops a space
+% \thanks{*This work was not supported by any organization}% <-this % stops a space
+\thanks{$^{1}$ The authors are with the Department of Mechanical Engineering, Korea Advanced Institute of Science and Technology (KAIST), Daejeon 34141, Republic of Korea {\tt\small sangukchoi@kaist.ac.kr; kckong@kaist.ac.kr}}%
+}
+
+
+\begin{document}
+
+
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+
+Accurate estimation of gait phase is essential for synchronizing wearable robot control with human movement, thereby enhancing both assistance quality and user safety. While deep learning approaches have demonstrated superior performance in modeling gait dynamics from multimodal sensor signals, their generalizability to impaired populations remains limited due to inter-subject variability, pathological movement patterns, and compensatory strategies such as hip hiking and circumduction. Furthermore, safety and ethical constraints hinder the collection of extensive data from individuals with stroke, posing challenges for training robust models. To overcome these limitations, we propose a personalized gait phase estimation using supervised domain adaptation (SDA) framework. Our method jointly trains a feature extractor and domain-specific regression heads using labeled data from both healthy individuals (source domain) and stroke survivors (target domain), encouraging feature alignment while preserving task-specific accuracy. Experimental results on a combined dataset, including individuals with chronic hemiplegia, demonstrate that the proposed approach outperforms conventional training and data augmentation baselines, achieving high estimation accuracy even with limited target data. This work contributes to the development of adaptive and data-efficient control strategies for wearable robots targeting individuals with gait impairments.
+
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{INTRODUCTION}
+
+Accurate prediction of gait phase is a crucial component in the control of wearable robots for gait assistance. Real-time recognition of a wearer’s gait phase enables the robot to synchronize its actions with the human movement, thereby enhancing both the control performance and the safety of locomotion. For instance, precise gait phase detection allows the robot to provide assistive torque during appropriate gait phases or adjust impedance parameters dynamically to accommodate varying biomechanical demands. Consequently, gait phase estimation has emerged as a key research challenge for wearable exoskeletons.
+
+Especially in wearable robots designed for individuals with gait impairments (e.g., post-stroke, cerebral palsy, or Parkinson's disease), accurate gait phase estimation remains a significant challenge. This difficulty arises from pathological gait patterns, which often involve asymmetric motion, inconsistent cadence, and compensatory strategies that obscure clear gait phase transitions.
+
+Conventional gait phase estimation methods adopt heuristic approaches using sensors such as inertial measurement units (IMUs) and force-sensitive resistors (FSRs) mounted on the lower limbs. For example, Ding et al. estimated stride timing by detecting the instance of maximum hip flexion using thigh-mounted IMUs. The stride time was then calculated as the interval between two consecutive peak flexion events. While such rule-based methods can be effective under constrained conditions, their generalizability to real-world settings remains limited. To address these challenges, recent studies have turned to data-driven approaches based on deep learning.
+
+To overcome these limitations, recent studies have explored deep learning-based approaches as powerful tools for extracting and predicting gait phase. Unlike traditional rule-based or signal processing techniques, deep learning models such as Convolutional Neural Networks (CNNs), Long Short-Term Memory (LSTM) networks, and Transformers have demonstrated superior performance by capturing complex nonlinear patterns from sensor data. For instance, Hannink et al.~\cite{hannink2017cnn} accurately detected gait events using a CNN-LSTM model trained on wearable IMU data. Yan et al.~\cite{yan2020lstm} further enhanced prediction performance by integrating IMU and EMG signals with an LSTM-based framework. These studies highlight the effectiveness of deep models in fusing multimodal signals for robust, real-time gait phase recognition.
+
+However, the performance of deep learning models is heavily influenced by the size and diversity of training datasets ~\cite{?}. Large-scale physiological datasets collected from healthy individuals, such as HuGaDB, PAMAP2, and the OU-ISIR Gait Database, have accelerated model development and validation. Nevertheless, their utility is limited when applied to individuals with gait impairments. Stroke survivors, for example, exhibit high inter-subject variability in motor patterns due to neuromuscular deficits and pathological gait compensations such as hip hiking, circumduction, and vaulting. These compensatory behaviors introduce substantial heterogeneity, making model generalization particularly challenging. Furthermore, ethical and safety concerns, including fall risk and fatigue, restrict data collection from impaired populations, resulting in small and imbalanced datasets.
+
+One promising solution to this challenge is the application of transfer learning, a technique that enables a model trained on a source domain (e.g., healthy gait data) to adapt effectively to a target domain (e.g., impaired gait data) with limited labeled samples. Transfer learning has been successfully applied in human activity recognition~\cite{zhao2019harl}, EMG decoding~\cite{mou2021transferEMG}, and medical time-series analysis~\cite{rajpurkar2017chexnet}.
+
+In this study, we adopt a supervised domain adaptation strategy, which assumes access to labeled data in both the source and target domains. This approach is well suited for gait applications where a small number of labeled impaired samples can be collected. By leveraging shared representations between domains, supervised adaptation can bridge the distribution gap while maintaining prediction accuracy.
+
+The primary contribution of this study is the development of a deep learning framework for gait phase estimation tailored to individuals with gait impairments, using a limited amount of experimental data. We demonstrate that a model pre-trained on healthy gait data can be successfully adapted to stroke survivors through supervised domain adaptation, enabling accurate, real-time gait phase prediction. This work provides new insights into the feasibility of applying deep learning techniques to impaired gait analysis and contributes to the advancement of personalized wearable robot control for rehabilitation and assistance.
+
+% \section{Related Works}
+% \subsection{Real-time Gait Phase Estimation}
+% \subsection{Real-time Gait Phase Estimation for Post-Stroke}
+% \subsection{Transfer Learning}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figure/stroke_exp_setup.png}
+    \caption{Experimental setup for collecting post-stroke gait data. (a) Subjects walked on a force plate-instrumented treadmill while wearing a safety harness. (b) The placement of IMUs on the lower limbs and trunk.}
+    \label{fig: stroke experiment setup}
+\end{figure}
+
+
+\section{Methods}
+\subsection{Dataset Construction}
+
+To enable accurate gait phase estimation for post-stroke individuals, we constructed a two-domain dataset composed of (1) a publicly available dataset of able-bodied individuals and (2) a post-stroke dataset collected through controlled experiments. The former serves as the source domain, while the latter forms the target domain.
+
+\subsubsection{Target domain dataset}
+The target domain dataset was collected from seven individuals with chronic post-stroke hemiparesis (6 males, 1 female; height: $173.3 \pm 5.6$ cm; body mass: $69.6 \pm 11.2$ kg). All participants provided written informed consent, and the experimental protocol was approved by the Institutional Review Board (IRB) of the Korea Advanced Institute of Science and Technology (KAIST). Subjects were instructed to walk on a treadmill at three speeds: their self-selected preferred speed, a slower speed (90\% of the preferred speed), and a faster speed (110\% of the preferred speed). Each subject completed three trials, one per speed condition, with over 50 strides recorded per condition. To ensure safety during treadmill walking, all participants wore a safety harness throughout the experiment as shown in Fig. \ref{fig: stroke experiment setup}. IMU data were collected from seven anatomical locations—bilateral thigh, shank, foot, and trunk segments—at a sampling frequency of 1000 Hz. The trunk IMU signal was acquired using the onboard sensor integrated into the NI myRIO data acquisition system, while the remaining six locations (bilateral thigh, shank, and foot) used MPU-6050 modules (TDK InvenSense). Additionally, synchronized motion capture and ground reaction force (GRF) data were recorded at 100 Hz.
+
+
+\subsubsection{Source domain dataset}
+The source domain dataset is derived from the publicly available dataset published by Camargo et al.~\cite{camargo2021comprehensive}, which includes motion capture and wearable sensor data (IMU, EMG, and goniometer) from 22 able-bodied participants. The dataset covers multiple locomotor tasks, including treadmill walking, overground walking, stair ambulation, and ramp traversal under various conditions. For this study, we extracted IMU data from the anterior torso and thigh segments during treadmill walking trials at multiple speeds. This subset was selected to match the sensor configuration and locomotion context used in the target domain, facilitating effective domain adaptation.
+
+Table~\ref{tab:dataset_summary} summarizes the physical characteristics of participants in both the source and target domains.
+
+\begin{table}[t]
+\centering
+\caption{Summary of source and target domain datasets}
+\label{tab:dataset_summary}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Property} & \textbf{Source Domain\cite{camargo2021comprehensive}} & \textbf{Target Domain} \\
+\midrule
+\# of Subjects & 22 & 7 \\
+Population & Healthy & Post-stroke \\
+\# of Strides per Person & 980-1100 & 40-70 \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figure/domain_adaptation_v2.png}
+    \caption{Proposed framework for gait phase estimation via supervised domain adaptation. A shared LSTM feature extractor learns from both source and target domains, while domain-specific regressors predict continuous gait phase values. MMD loss is used to align the latent feature distributions across domains during training.}
+    \label{fig: transfer learning}
+\end{figure*}
+
+\subsection{Sensor Selection and Data Pre-processing}
+
+Post-stroke hemiplegic gait typically presents greater impairments in distal joints compared to proximal ones [?]. To minimize the domain gap between healthy individuals and post-stroke patients, this study utilizes IMU data collected from the trunk and thigh, a proximal joint.
+
+The input features include raw 3-axis acceleration and angular velocity signals from the thigh-mounted IMU, as well as the estimated thigh angle and angular velocity in the sagittal plane. The angle is estimated using a complementary filtering approach that combines accelerometer- and gyroscope-based estimates. Specifically, the angle from the accelerometer, $\hat{\theta}_a$, is computed from the arctangent of two acceleration components, while the gyroscope-based angle, $\hat{\theta}_g$, is obtained via numerical integration of angular velocity.
+
+Given that accelerometers are more reliable at low frequencies and gyroscopes at high frequencies, the complementary filter is designed accordingly. The low-pass filter $G(z)$ applied to $\theta_a$ is defined as:
+\begin{equation}
+G(z) = \frac{T_s \omega_c}{1 + T_s \omega_c - z^{-1}},
+\end{equation}
+where $T_s$ denotes the sampling period and $\omega_c$ is the cutoff frequency. The corresponding high-pass filter applied to $\theta_g$ is given by  $\bar{G}(z) = 1- G(z).$ The final estimate of the thigh angle is computed as:
+\begin{equation}
+\hat{\theta}(z) = G(z)\theta_a + \bar{G}(z)\theta_g.
+\end{equation}
+The cutoff frequency of the complementary filter is set to $0.5,\mathrm{Hz}$, thereby emphasizing the gyroscope component over the accelerometer.
+
+The ground truth gait phase was computed based on vertical ground reaction force (vGRF) data recorded from each dataset. Heel strike events were identified when the vGRF signal exceeded a threshold of 10\% of the subject's body weight, indicating initial foot contact with the ground. Consecutive heel strikes of the same foot defined the boundaries of a gait cycle. Within each cycle, the gait phase $\phi$ was assigned as a continuous, normalized time variable linearly increasing from 0 to 1. Specifically, the phase value was defined as $\phi = \frac{t - t_{i}}{t_{i+1} - t_{i}}$, where $t$ denotes the current time, and $t_{i}$ and $t_{i+1}$ represent the timestamps of two successive heel strikes.
+
+
+A total of eight sensor-derived features are used as inputs to the neural network, structured into a 2-dimensional matrix using a sliding time window. Each input window spans 200 ms (20 samples at 100 Hz sampling rate), capturing temporal dependencies within the gait cycle.
+
+
+
+\subsection{Gait Phase Estimation Model via Supervised Domain Adaptation}
+
+\subsubsection{Framework Overview}
+
+We formulate gait phase estimation as a regression task that maps multivariate time-series sensor input $\mathbf{x} \in \mathbb{R}^{T \times F}$ to a continuous representation of gait phase. To handle the discontinuity inherent at the gait cycle boundary, we adopt a phase portrait representation~\cite{kang2019real}. The gait phase $\phi$ is converted into angle and angular velocity as expressed as $\theta = cos(2\pi\phi)$ and $\dot{\theta} = sin(2\pi\phi)$, respectively. Therefore, the output of the gait phase estimation model is derived as 
+\begin{equation}
+    y = \begin{bmatrix}
+        \theta \\ \dot{\theta}
+    \end{bmatrix}
+    = \begin{bmatrix}
+        cos(2\pi\phi) \\ sin(2\pi\phi)
+    \end{bmatrix}.
+\end{equation}
+
+The proposed model consists of a shared temporal feature extractor and an independent regression head. The feature extractor comprises multiple stacked Long Short-Term Memory (LSTM) layers, followed by a fully connected layer. The LSTM is a recurrent neural network (RNN)-based architecture in which the estimated variables are retained in the network's internal memory and contribute to the prediction of future time steps. Due to its ability to capture long-term temporal dependencies, the LSTM has demonstrated strong performance in regression tasks involving time-series data~\cite{lstm_reference}. Only the final hidden state of the last LSTM layer is used to represent the temporal dynamics, which is then mapped to a 2-dimensional output representing the phase portrait. To prevent overfitting and enhance generalization, we incorporate batch normalization and dropout layers within the network.
+
+To improve generalization across subject groups, we adopt a supervised domain adaptation (SDA) framework. Specifically, datasets from healthy individuals are designated as the source domain $\mathcal{D}_S = {(\mathbf{x}_i^S, \mathbf{y}_i^S)}_{i=1}^{N_S}$, and datasets from stroke survivors are used as the target domain $\mathcal{D}_T = {(\mathbf{x}_j^T, \mathbf{y}_j^T)}_{j=1}^{N_T}$, where $N_S \gg N_T$. Unlike traditional two-stage fine-tuning approaches, our framework trains the model jointly on both domains from the start. The feature extractor is shared between domains, allowing the model to learn domain-invariant representations while being supervised by labels from both domains.
+
+various domain discrepancy measures have been proposed, including Maximum Mean Discrepancy (MMD), Correlation Alignment (CORAL), and adversarial training-based approaches such as Domain-Adversarial Neural Networks (DANN). Among these, MMD is a widely adopted, kernel-based non-parametric measure that quantifies the distance between two probability distributions by comparing the means of their embeddings in a reproducing kernel Hilbert space (RKHS). In this study, we adopt MMD as the domain alignment objective due to its stability, simplicity, and effectiveness in scenarios with limited target domain data. Unlike adversarial approaches that require careful tuning of competing losses or CORAL that aligns only second-order statistics, MMD enables explicit minimization of distributional gaps in a theoretically grounded manner. Furthermore, it does not require domain labels and can be seamlessly integrated into the end-to-end training of deep networks, making it well-suited for our supervised domain adaptation setting with small, labeled target datasets.
+
+
+\subsubsection{Loss Functions}
+
+The overall training objective integrates two types of losses: regression loss for supervised learning and a domain alignment loss to minimize feature distribution discrepancy between domains. The total loss is defined as:
+\begin{equation}
+\mathcal{L}_{\text{total}} = \mathcal{L}_{S} + \alpha \cdot \mathcal{L}_{T} + \beta \cdot \mathcal{L}_{D},
+\end{equation}
+where $\alpha$ and $\beta$ are weighting coefficients, and $\mathcal{L}_{S}$,$\mathcal{L}_{T}$, and $\mathcal{L}_{D}$ denote the regression losses of the source and target domains, and the domain alignment loss (MMD), respectively.
+
+The regression losses are computed using the Mean Squared Error (MSE) between predicted and ground-truth phase portraits:
+
+\begin{align}
+\mathcal{L}_{S} = \frac{1}{N_S} \sum_{i=1}^{N_S} \left\| \hat{\mathbf{y}}^S_i - \mathbf{y}_i^S \right\|_2^2, \\
+\mathcal{L}_{T} = \frac{1}{N_T} \sum_{i=1}^{N_T} \left\|\hat{\mathbf{y}}^T_i - \mathbf{y}_i^T \right\|_2^2
+\end{align}
+where \( N_S \) and \( N_T \) denote the number of training samples in the source and target domains, respectively;  
+$\hat{\mathbf{y}}^S_i$ and \( \hat{\mathbf{y}}^T_i \) are the model predictions for the \( i \)-th sample in the source and target domains;  
+\( \mathbf{y}_i^S\) and \(\mathbf{y}_i^T \) are the corresponding ground-truth phase portrait vectors.
+
+To align the feature distributions, the MMD loss is applied to the output of the shared feature extractor—specifically, the LSTM-encoded representations—prior to the regression heads. Let $\mathbf{h}_i^S$ and $\mathbf{h}_j^T$ denote the extracted feature representations from the source and target domains, respectively. The empirical MMD loss is defined as:
+\begin{equation}
+\mathcal{L}_{D} = \left\| \frac{1}{N_S} \sum_{i=1}^{N_S} \phi(\mathbf{h}_i^S) - \frac{1}{N_T} \sum_{j=1}^{N_T} \phi(\mathbf{h}_j^T) \right\|^2_{\mathcal{H}},
+\end{equation}
+where $\phi(\cdot)$ is the feature mapping implicitly defined by a Gaussian kernel:
+\begin{equation}
+k(\mathbf{h}_i, \mathbf{h}_j) = \exp\left( -\frac{| \mathbf{h}_i - \mathbf{h}_j |^2}{2\sigma^2} \right).
+\end{equation}
+
+\begin{table}[t]
+\centering
+\caption{Grid search ranges and optimized values for key hyperparameters}
+\label{tab:hyperparam_grid}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Hyperparameter} & \textbf{Search Range} & \textbf{Optimized Value} \\
+\midrule
+\# of LSTM layers & \{1, 2\} & 2 \\
+Hidden units per LSTM layer & \{32, 50, 64\} & 50 \\
+Dropout rate & \{0.2, 0.4, 0.5\} & 0.4 \\
+Batch size & \{64, 128, 256\} & 64 \\
+Fully connected layer size & \{32, 64, 128\} & 64 \\
+Learning rate & \{1e-03, 1e-04\} & 1e-03 \\
+Loss weight $\alpha$ (target MSE) & \{0.5, 1.0, 2.0\} & 1.0 \\
+Loss weight $\beta$ (MMD) & \{0.01, 0.1, 1.0\} & 0.1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Hyperparameter Tuning}
+
+The hyperparameters of the gait phase estimation model were selected through a grid search procedure using the source domain training data and a held-out validation set. The batch size was searched over {64, 128, 256}, and a size of 64 yielded the best validation performance. Each LSTM layer contained 50 hidden units, with the number of layers selected from {1, 2}; a two-layer configuration was found to be optimal. A dropout rate of 0.4 was selected from the range {0.2, 0.4, 0.5} to prevent overfitting. The fully connected layer size was chosen as 64 from the candidates {32, 64, 128}.
+
+All LSTM layers employed the \textit{tanh} activation function. The Adam optimizer was used, with the learning rate selected from {1e-03, 1e-04}. A learning rate of $1\times10^{-3}$ was used. For the supervised domain adaptation setting, the loss function included weighting coefficients $\alpha$ and $\beta$ for the target regression loss and the domain alignment (MMD) loss, respectively. These were selected from {0.5, 1.0, 2.0} for $\alpha$ and {0.01, 0.1, 1.0} for $\beta$, with optimal values found to be $\alpha=1.0$ and $\beta=0.1$.
+
+The training process was conducted for up to 500 epochs, with early stopping applied if the validation loss did not improve for 10 consecutive epochs. The final hyperparameter configuration is summarized in Table~\ref{tab:hyperparam_grid}.
+
+All training and evaluation were conducted on an NVIDIA RTX 3080 GPU, with the total training time per run averaging approximately 20 minutes.
+
+\subsection{Baseline Methods}
+To demonstrate the effectiveness of the proposed gait phase estimation model, we compare its performance against the following baseline methods.
+
+\subsubsection{Source Only (SO)}
+The \textbf{SO} method simulates a model trained exclusively on the source dataset, which contains gait data from non-disabled individuals. This setting reflects a zero-shot inference scenario where no post-stroke data is used for training.
+
+\subsubsection{Target Only (TO)}
+The \textbf{TO} method represents conventional supervised learning using only the target dataset collected from post-stroke individuals. Although it ensures full label supervision in the target domain, the limited amount of target data poses challenges for model generalization.
+
+\subsubsection{Target with Data Augmentation (TA)}
+The \textbf{TA} method aims to improve model performance by artificially increasing the size of the target dataset via time-series data augmentation techniques such as jittering, scaling, and time warping. This approach tests whether synthetic diversity in the small target dataset can compensate for its limited size.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figure/domain_gap_tsne.png}
+    \caption{t-SNE visualization of latent features from source and target domains. The clear separation indicates a domain gap in feature distribution.}
+    \label{fig:domain_gap_tsne}
+\end{figure}
+
+\section{Results}
+
+\subsection{Domain Gap in Raw Gait Data between Non-Disabled and Post-Stroke Subjects}
+
+To justify the necessity of domain adaptation, we first investigate the distributional differences in the raw gait data between non-disabled (source domain) and post-stroke (target domain) individuals. These differences are critical, as training a model solely on source data may lead to degraded performance on target subjects due to domain mismatch.
+
+Fig.~\ref{fig:domain_gap_tsne} shows a t-SNE visualization of the normalized input features extracted from both domains. Each point represents a time frame of multivariate sensor data (e.g., joint angles, ground reaction forces, or inertial signals). The source and target data points form well-separated clusters, indicating substantial discrepancy in gait patterns.
+
+To quantify this difference, we compute the Maximum Mean Discrepancy (MMD) between the distributions of the raw input data. The resulting MMD value (e.g., $> 0.15$) confirms a statistically significant domain gap even before model training. Such divergence likely stems from stroke-induced asymmetry, altered timing, and compensatory motion strategies.
+
+These results strongly motivate the use of supervised domain adaptation to bridge the feature distribution gap and improve generalization to post-stroke gait.
+
+
+\subsection{Loss Dynamics During Training}
+
+To better understand the training behavior of the proposed supervised domain adaptation framework, we visualized the evolution of each loss component over 100 training epochs, as shown in Fig.~\ref{fig:loss_curve}.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figure/loss_curve.png}
+    \caption{Training loss components over epochs. Source and target regression losses decrease steadily, while MMD loss ensures domain alignment. Total loss (dashed) is the weighted sum of all components.}
+    \label{fig:loss_curve}
+\end{figure}
+
+The \textit{Source Regression Loss} and \textit{Target Regression Loss} gradually decrease as the network learns to fit phase labels from both domains. In the early epochs, the source loss exhibits a more rapid decline due to the abundance of labeled source data, while the target loss reduces more slowly, reflecting the limited target data size. The \textit{MMD Loss}, which aligns the latent feature distributions of source and target domains, also shows a steady decrease throughout training. This indicates successful minimization of domain shift in the shared feature space. The \textit{Total Loss}, plotted as a dashed line, aggregates all components and exhibits a smooth downward trend, confirming the stable convergence of the multi-objective training process. These dynamics validate the effectiveness of the proposed loss formulation in balancing regression performance and domain adaptation.
+
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figure/result_rmse_r2.png}
+    \caption{Gait phase estimation performance evaluated on post-stroke subjects. (a) Root Mean Squared Error (RMSE) in predicted phase. (b) Coefficient of determination ($R^2$) for regression accuracy.}
+    \label{fig:gait_phase_estimation_performance}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figure/gaitphase_time_domain.png}
+    \caption{Gait phase estimation performance evaluated on post-stroke subjects in (a) phase space and (b) time domain.}
+    \label{fig:gaitphase_time_domain}
+\end{figure}
+\subsection{Gait Phase Estimation Performance}
+
+The performance of the proposed supervised domain adaptation method was evaluated against the baseline methods described in the previous section: Source Only (SO), Target Only (TO), and Target with Augmentation (TA). All models were tested on the target domain (i.e., post-stroke individuals) using the same input modality and network architecture to ensure fair comparison.
+
+Fig.~\ref{fig:gait_phase_estimation_performance} illustrates the quantitative results of gait phase prediction for each subject as well as the overall average. In subfigure (a), the Root Mean Squared Error (RMSE) indicates the magnitude of prediction errors, while subfigure (b) presents the $R^2$ score, which measures how well the predicted phase fits the ground truth.
+
+The proposed method achieved the best performance in both metrics across all subjects. It significantly reduced RMSE and achieved higher $R^2$ compared to the SO and TO models, which either lacked exposure to post-stroke data or suffered from data scarcity. While the TA model showed improvements over TO by introducing variability through synthetic augmentation, it still underperformed compared to the proposed method.
+
+These results highlight the benefit of using domain adaptation over naive transfer or data augmentation. Specifically, the proposed framework leverages rich source-domain knowledge while maintaining adaptability to the target domain, enabling more robust and accurate gait phase estimation in individuals with post-stroke gait impairments.
+
+In Fig.~\ref{fig:gaitphase_time_domain}(a), the phase portrait depicts the relationship between the estimated gait phase $\hat{\phi}$ and its temporal derivative $\dot{\hat{\phi}}$, compared against the ground truth. The ground truth trajectory forms a unit circle centered at the origin, representing an idealized continuous cyclic gait phase. The estimated trajectory closely matches the reference circle, indicating the model's ability to preserve cyclic consistency and temporal smoothness. In Fig.~\ref{fig:gaitphase_time_domain}(b), the estimated gait phase over time is plotted alongside the ground truth. Both traces exhibit a linear increase from 0 to 1 within each gait cycle, repeating periodically. The close alignment of the two signals demonstrates high accuracy in continuous gait phase prediction.
+
+\subsection{Real-time Inference Evaluation on Edge Device}
+The estimated gait phase must be applicable to the real-time control of a wearable robot. To evaluate the real-time applicability of the proposed model, we deployed the trained gait phase model on the NVIDIA Jetson Xavier, a high-performance edge device suitable for onboard inference in wearable robotics.
+The experiment was conducted using the TensorFlow Lite runtime environment in Python. The average inference time for a single sequence was measured as $4.4 \pm 1.7$ ms, which is sufficiently fast for real-time operation within a 100Hz control loop. Additionally, the peak memory usage during inference reached 38.6\%, indicating that the model can run reliably even within the resource-constrained environment of the Jetson Xavier.
+
+\section{Discussion}
+(Comparison to SOTA)
+\section{Conclusion}
+This study presents a supervised domain adaptation framework for continuous gait phase estimation in individuals with post-stroke hemiplegia. By leveraging labeled datasets from both healthy individuals and stroke survivors, our approach aligns feature representations across domains while maintaining regression performance for each population. Unlike conventional deep learning methods, the proposed SDA method enables more stable and accurate prediction under limited target data conditions, addressing the domain gap induced by pathological gait characteristics. Experimental results confirm that our method significantly improves estimation accuracy over baseline models, particularly in stroke participants with diverse compensatory patterns. These findings demonstrate the potential of SDA-based models to enable personalized, real-time gait phase estimation and lay the groundwork for adaptive control strategies in wearable robotics.
+
+As future work, we plan to (1) integrate the proposed gait phase estimation model into the real-time control loop of a gait assistive exoskeleton to enable phase-synchronized assistance, and (2) extend the framework to other types of pathological gait beyond stroke, such as those caused by cerebral palsy or Parkinson’s disease, to evaluate its generalizability and clinical applicability.
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv, ref}
+
+\end{document}
