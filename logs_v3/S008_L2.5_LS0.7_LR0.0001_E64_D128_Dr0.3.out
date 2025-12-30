@@ -1,0 +1,77 @@
+Starting Run on GPU 0
+Time: 2025-12-25 02:47:23
+
+[Run Start] Subject S008 | Mode ['SDA'] | Params: L2.5_LS0.7_LR0.0001_E64_D128_Dr0.3
+
+[Fold 1 - SDA] Train: ['S008_T004', 'S008_T006'], Test: S008_T001, Norm: fixed
+/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+  Ep 1: Train 0.8110 | Val 0.6740 | Test 0.0508
+Validation loss decreased (0.674029 --> 0.674029).  Saving model ...
+  Ep 2: Train 0.4809 | Val 0.4334 | Test 0.0391
+Validation loss decreased (0.433381 --> 0.433381).  Saving model ...
+  Ep 3: Train 0.4123 | Val 0.3440 | Test 0.0367
+Validation loss decreased (0.344009 --> 0.344009).  Saving model ...
+  Ep 4: Train 0.3718 | Val 0.3469 | Test 0.0378
+EarlyStopping counter: 1 out of 5
+  Ep 5: Train 0.3562 | Val 0.3404 | Test 0.0318
+Validation loss decreased (0.340391 --> 0.340391).  Saving model ...
+  Ep 6: Train 0.3428 | Val 0.3468 | Test 0.0351
+EarlyStopping counter: 1 out of 5
+  Ep 7: Train 0.3343 | Val 0.3391 | Test 0.0299
+Validation loss decreased (0.339092 --> 0.339092).  Saving model ...
+  Ep 8: Train 0.3310 | Val 0.3333 | Test 0.0305
+Validation loss decreased (0.333328 --> 0.333328).  Saving model ...
+  Ep 9: Train 0.3230 | Val 0.3048 | Test 0.0338
+Validation loss decreased (0.304827 --> 0.304827).  Saving model ...
+  Ep 10: Train 0.3209 | Val 0.3132 | Test 0.0339
+EarlyStopping counter: 1 out of 5
+  Ep 11: Train 0.3155 | Val 0.3194 | Test 0.0337
+EarlyStopping counter: 2 out of 5
+  Ep 12: Train 0.3138 | Val 0.3046 | Test 0.0354
+EarlyStopping counter: 3 out of 5
+  Ep 13: Train 0.3116 | Val 0.3051 | Test 0.0392
+EarlyStopping counter: 4 out of 5
+  Ep 14: Train 0.3053 | Val 0.2963 | Test 0.0337
+Validation loss decreased (0.296267 --> 0.296267).  Saving model ...
+  Ep 15: Train 0.3064 | Val 0.3060 | Test 0.0280
+EarlyStopping counter: 1 out of 5
+  Ep 16: Train 0.3038 | Val 0.2934 | Test 0.0371
+Validation loss decreased (0.293424 --> 0.293424).  Saving model ...
+  Ep 17: Train 0.2997 | Val 0.2748 | Test 0.0349
+Validation loss decreased (0.274774 --> 0.274774).  Saving model ...
+  Ep 18: Train 0.2969 | Val 0.2940 | Test 0.0378
+EarlyStopping counter: 1 out of 5
+  Ep 19: Train 0.2980 | Val 0.2964 | Test 0.0300
+EarlyStopping counter: 2 out of 5
+  Ep 20: Train 0.2964 | Val 0.2712 | Test 0.0295
+Validation loss decreased (0.271185 --> 0.271185).  Saving model ...
+  Ep 21: Train 0.2919 | Val 0.2683 | Test 0.0407
+Validation loss decreased (0.268315 --> 0.268315).  Saving model ...
+  Ep 22: Train 0.2858 | Val 0.2632 | Test 0.0505
+Validation loss decreased (0.263179 --> 0.263179).  Saving model ...
+  Ep 23: Train 0.2876 | Val 0.2620 | Test 0.0443
+Validation loss decreased (0.262048 --> 0.262048).  Saving model ...
+  Ep 24: Train 0.2871 | Val 0.2752 | Test 0.0364
+EarlyStopping counter: 1 out of 5
+  Ep 25: Train 0.2874 | Val 0.2694 | Test 0.0323
+EarlyStopping counter: 2 out of 5
+  Ep 26: Train 0.2878 | Val 0.2761 | Test 0.0411
+EarlyStopping counter: 3 out of 5
+  Ep 27: Train 0.2832 | Val 0.2466 | Test 0.0381
+Validation loss decreased (0.246571 --> 0.246571).  Saving model ...
+  Ep 28: Train 0.2834 | Val 0.2868 | Test 0.0330
+EarlyStopping counter: 1 out of 5
+  Ep 29: Train 0.2790 | Val 0.2650 | Test 0.0452
+EarlyStopping counter: 2 out of 5
+  Ep 30: Train 0.2795 | Val 0.2547 | Test 0.0391
+EarlyStopping counter: 3 out of 5
+  Ep 31: Train 0.2798 | Val 0.2863 | Test 0.0377
+EarlyStopping counter: 4 out of 5
+  Ep 32: Train 0.2736 | Val 0.3005 | Test 0.0334
+EarlyStopping counter: 5 out of 5
+Early stopping triggered!
+/home/sangukchoi/Stroke_SDA/sda_training.py:615: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(os.path.join(out_dir, 'best_model.pth')))
+Final Test MSE (Best Model): 0.0381
+Finished. Status: Success

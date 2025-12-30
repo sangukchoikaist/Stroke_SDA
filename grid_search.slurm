@@ -1,41 +1,40 @@
 #!/bin/bash
 # ==============================================================
-# SLURM JOB SCRIPT for SDA Grid Search
-# Adapted from Server Template (server1)
+# SLURM JOB SCRIPT TEMPLATE  (single GPU example)
+# --------------------------------------------------------------
+# [Server Information]
+#   NodeName    : server1
+#   Total CPUs  : 64 cores
+#   Total Memory: 62000 MB  (~62 GB usable)
+#   Total GPUs  : 4 × NVIDIA RTX A5000
+# --------------------------------------------------------------
+# [Resource limits reminder]
+#   - You must request resources within the server limits:
+#       --cpus-per-task <= 64
+#       --mem <= 62000M (or 62G)
+#       --gres=gpu: <= 4
+#   - Exceeding these values will cause "Requested node configuration is not available" error.
 # ==============================================================
+#SBATCH -J SDA_GridSearch
+#SBATCH -N 1                              # Number of nodes (always 1 in this server)
+#SBATCH -n 1                              # Number of tasks (processes)
+#SBATCH --gres=gpu:4                      # GPU allocation
+#SBATCH --cpus-per-task=32                # CPU allocation: choose ≤ 64
+#SBATCH --mem=58G                         # Memory allocation: choose ≤ 62000 MB (~62G)
+#SBATCH -t 48:00:00                       # Max runtime (HH:MM:SS)
+#SBATCH -o logs/%x_%j.out                 # Log files   (%x = job name, %j = job ID)
+#SBATCH -e logs/%x_%j.err                 # Error files (%x = job name, %j = job ID)
 
-#SBATCH -J SDA_Grid               # Job name
-#SBATCH -N 1                      # Number of nodes
-#SBATCH -n 1                      # Number of tasks
-#SBATCH --gres=gpu:1              # GPU allocation
-#SBATCH --cpus-per-task=8         # CPU allocation (8 cores for parallel workers)
-#SBATCH --mem=32G                 # Memory allocation (32GB)
-#SBATCH -t 48:00:00               # Max runtime
-#SBATCH -o logs/%x_%j.out         # Output log
-#SBATCH -e logs/%x_%j.err         # Error log
-
-# ================= ENVIRONMENT SETUP =================
-# Server-specific conda path from template
+# Initialize Conda
 source /opt/miniconda3/etc/profile.d/conda.sh
 
-# Activate environment (Check if name 'torch_gpu' exists on server!)
+# Activate the torch_gpu environment
 conda activate torch_gpu
 
-echo "Job started on $(hostname) at $(date)"
-echo "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
-nvidia-smi -L
+# Print environment info for debugging
+echo "Python: $(which python)"
+echo "Conda Env: $CONDA_DEFAULT_ENV"
+nvidia-smi
 
-export PYTHONUNBUFFERED=1 # Unbuffered output
-
-# ================= DATA PATH REMINDER =================
-# ERROR PREVENTION: 
-# Please ensure 'sda_training.py' has correct server paths for .h5 files!
-
-# ================= RUN SCRIPT =================
-# Create logs directory if missing
-mkdir -p logs
-mkdir -p results_grid_search
-
-python run_grid_search.py
-
-echo "Job Finished at $(date)"
+# Run the grid search script
+python run_grid_search_server.py

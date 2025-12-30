@@ -1,0 +1,61 @@
+Starting Run on GPU 3
+Time: 2025-12-25 00:25:13
+
+[Run Start] Subject S007 | Mode ['SDA'] | Params: L3.0_LS0.5_LR0.0001_E64_D32_Dr0.3
+
+[Fold 1 - SDA] Train: ['S007_T006', 'S007_T009'], Test: S007_T005, Norm: fixed
+/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+  Ep 1: Train 0.6554 | Val 0.6402 | Test 0.0919
+Validation loss decreased (0.640206 --> 0.640206).  Saving model ...
+  Ep 2: Train 0.4614 | Val 0.5465 | Test 0.0641
+Validation loss decreased (0.546461 --> 0.546461).  Saving model ...
+  Ep 3: Train 0.4255 | Val 0.5162 | Test 0.0556
+Validation loss decreased (0.516241 --> 0.516241).  Saving model ...
+  Ep 4: Train 0.4125 | Val 0.5211 | Test 0.0510
+EarlyStopping counter: 1 out of 5
+  Ep 5: Train 0.3960 | Val 0.5097 | Test 0.0490
+Validation loss decreased (0.509695 --> 0.509695).  Saving model ...
+  Ep 6: Train 0.3807 | Val 0.5223 | Test 0.0411
+EarlyStopping counter: 1 out of 5
+  Ep 7: Train 0.3627 | Val 0.4684 | Test 0.0404
+Validation loss decreased (0.468445 --> 0.468445).  Saving model ...
+  Ep 8: Train 0.3463 | Val 0.4808 | Test 0.0329
+EarlyStopping counter: 1 out of 5
+  Ep 9: Train 0.3289 | Val 0.4509 | Test 0.0286
+Validation loss decreased (0.450881 --> 0.450881).  Saving model ...
+  Ep 10: Train 0.3179 | Val 0.4295 | Test 0.0237
+Validation loss decreased (0.429495 --> 0.429495).  Saving model ...
+  Ep 11: Train 0.3107 | Val 0.4170 | Test 0.0242
+Validation loss decreased (0.417049 --> 0.417049).  Saving model ...
+  Ep 12: Train 0.3055 | Val 0.3843 | Test 0.0202
+Validation loss decreased (0.384314 --> 0.384314).  Saving model ...
+  Ep 13: Train 0.3014 | Val 0.3560 | Test 0.0180
+Validation loss decreased (0.356030 --> 0.356030).  Saving model ...
+  Ep 14: Train 0.2983 | Val 0.4052 | Test 0.0165
+EarlyStopping counter: 1 out of 5
+  Ep 15: Train 0.2991 | Val 0.4211 | Test 0.0159
+EarlyStopping counter: 2 out of 5
+  Ep 16: Train 0.2923 | Val 0.3432 | Test 0.0139
+Validation loss decreased (0.343226 --> 0.343226).  Saving model ...
+  Ep 17: Train 0.2878 | Val 0.3674 | Test 0.0170
+EarlyStopping counter: 1 out of 5
+  Ep 18: Train 0.2962 | Val 0.3356 | Test 0.0145
+Validation loss decreased (0.335561 --> 0.335561).  Saving model ...
+  Ep 19: Train 0.2826 | Val 0.3198 | Test 0.0110
+Validation loss decreased (0.319844 --> 0.319844).  Saving model ...
+  Ep 20: Train 0.2806 | Val 0.3472 | Test 0.0143
+EarlyStopping counter: 1 out of 5
+  Ep 21: Train 0.2866 | Val 0.3565 | Test 0.0121
+EarlyStopping counter: 2 out of 5
+  Ep 22: Train 0.2884 | Val 0.3409 | Test 0.0119
+EarlyStopping counter: 3 out of 5
+  Ep 23: Train 0.2750 | Val 0.3227 | Test 0.0184
+EarlyStopping counter: 4 out of 5
+  Ep 24: Train 0.2814 | Val 0.3779 | Test 0.0150
+EarlyStopping counter: 5 out of 5
+Early stopping triggered!
+/home/sangukchoi/Stroke_SDA/sda_training.py:615: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(os.path.join(out_dir, 'best_model.pth')))
+Final Test MSE (Best Model): 0.0110
+Finished. Status: Success

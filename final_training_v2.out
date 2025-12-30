@@ -1,0 +1,25 @@
+nohup: ignoring input
+!!! Restricting process_all_subjects to S003 due to override !!!
+Starting Full Experiment on Subjects: ['S003']
+Modes: ['SDA', 'TO', 'SO', 'TL']
+
+Checking GPU Availability:
+  CUDA Available: True
+  Device Name: NVIDIA RTX A5000
+Loading Source Data (All Healthy)...
+
+
+================================================
+Processing Target Subject: S003
+================================================
+Trials: ['S003_T002', 'S003_T003', 'S003_T006']
+
+--- Mode: SDA ---
+
+[Fold 1 - SDA] Train: ['S003_T003', 'S003_T006'], Test: S003_T002, Norm: fixed
+/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+  Ep 1: Train 0.4350 | Val 0.2826 | Test 0.0304
+Validation loss decreased (0.282564 --> 0.282564).  Saving model ...
+  Ep 2: Train 0.2734 | Val 0.2330 | Test 0.0331
+Validation loss decreased (0.233003 --> 0.233003).  Saving model ...

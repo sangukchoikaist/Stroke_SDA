@@ -1,0 +1,41 @@
+Python: /home/sangukchoi/.conda/envs/torch_gpu/bin/python
+Conda Env: torch_gpu
+Tue Dec 23 22:35:10 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.247.01             Driver Version: 535.247.01   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA RTX A5000               On  | 00000000:81:00.0 Off |                  Off |
+| 30%   41C    P8              24W / 230W |      1MiB / 24564MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA RTX A5000               On  | 00000000:82:00.0 Off |                  Off |
+| 30%   30C    P8              15W / 230W |      1MiB / 24564MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   2  NVIDIA RTX A5000               On  | 00000000:C1:00.0 Off |                  Off |
+| 30%   34C    P8              17W / 230W |      1MiB / 24564MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   3  NVIDIA RTX A5000               On  | 00000000:C2:00.0 Off |                  Off |
+| 30%   36C    P8              17W / 230W |      1MiB / 24564MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+!!! CONFIG OVERRIDE LOADED from config_override.json: {'target_subject': 'S003', 'lambda_mmd': 0.1, 'learning_rate': 0.0001, 'encoder_layers': [64, 32], 'decoder_layers': [32], 'dropout': 0.4, 'results_dir': 'd:/RSC lab/Codes/Stroke_SDA/results_grid_search\\S003_L0.1_LR0.0001_E64_D32_Dr0.4', 'max_folds': 1, 'epochs': 100, 'patience': 5, 'batch_size': 64, 'modes': ['SDA']} !!!
+Assuming 4 GPUs available.
+Loading Source Data into System Memory (Shared by Workers)...
+Loading Source Data (All Healthy)...
+Data Loaded in 0.34s. Shape: (81491, 50, 8)
+Total Combinations: 72 x 6 = 432 runs
+Starting Optimized Parallel Execution with 4 workers...

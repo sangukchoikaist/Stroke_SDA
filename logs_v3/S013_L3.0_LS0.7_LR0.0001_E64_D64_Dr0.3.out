@@ -1,0 +1,63 @@
+Starting Run on GPU 3
+Time: 2025-12-25 05:42:35
+
+[Run Start] Subject S013 | Mode ['SDA'] | Params: L3.0_LS0.7_LR0.0001_E64_D64_Dr0.3
+
+[Fold 1 - SDA] Train: ['S013_T003', 'S013_T006'], Test: S013_T002, Norm: fixed
+/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+  Ep 1: Train 0.8003 | Val 1.0019 | Test 0.0937
+Validation loss decreased (1.001944 --> 1.001944).  Saving model ...
+  Ep 2: Train 0.4761 | Val 0.8613 | Test 0.0513
+Validation loss decreased (0.861327 --> 0.861327).  Saving model ...
+  Ep 3: Train 0.4322 | Val 0.7406 | Test 0.0391
+Validation loss decreased (0.740636 --> 0.740636).  Saving model ...
+  Ep 4: Train 0.4051 | Val 0.7267 | Test 0.0391
+Validation loss decreased (0.726725 --> 0.726725).  Saving model ...
+  Ep 5: Train 0.3816 | Val 0.7109 | Test 0.0373
+Validation loss decreased (0.710902 --> 0.710902).  Saving model ...
+  Ep 6: Train 0.3751 | Val 0.6812 | Test 0.0271
+Validation loss decreased (0.681235 --> 0.681235).  Saving model ...
+  Ep 7: Train 0.3704 | Val 0.6260 | Test 0.0263
+Validation loss decreased (0.625966 --> 0.625966).  Saving model ...
+  Ep 8: Train 0.3596 | Val 0.6573 | Test 0.0323
+EarlyStopping counter: 1 out of 5
+  Ep 9: Train 0.3531 | Val 0.6220 | Test 0.0293
+Validation loss decreased (0.621967 --> 0.621967).  Saving model ...
+  Ep 10: Train 0.3504 | Val 0.6294 | Test 0.0292
+EarlyStopping counter: 1 out of 5
+  Ep 11: Train 0.3397 | Val 0.6262 | Test 0.0351
+EarlyStopping counter: 2 out of 5
+  Ep 12: Train 0.3394 | Val 0.6082 | Test 0.0330
+Validation loss decreased (0.608218 --> 0.608218).  Saving model ...
+  Ep 13: Train 0.3416 | Val 0.6280 | Test 0.0325
+EarlyStopping counter: 1 out of 5
+  Ep 14: Train 0.3374 | Val 0.6331 | Test 0.0296
+EarlyStopping counter: 2 out of 5
+  Ep 15: Train 0.3302 | Val 0.5928 | Test 0.0276
+Validation loss decreased (0.592827 --> 0.592827).  Saving model ...
+  Ep 16: Train 0.3222 | Val 0.6050 | Test 0.0283
+EarlyStopping counter: 1 out of 5
+  Ep 17: Train 0.3282 | Val 0.6149 | Test 0.0280
+EarlyStopping counter: 2 out of 5
+  Ep 18: Train 0.3230 | Val 0.6125 | Test 0.0303
+EarlyStopping counter: 3 out of 5
+  Ep 19: Train 0.3209 | Val 0.6240 | Test 0.0292
+EarlyStopping counter: 4 out of 5
+  Ep 20: Train 0.3131 | Val 0.5906 | Test 0.0270
+Validation loss decreased (0.590564 --> 0.590564).  Saving model ...
+  Ep 21: Train 0.3126 | Val 0.6336 | Test 0.0261
+EarlyStopping counter: 1 out of 5
+  Ep 22: Train 0.3102 | Val 0.6148 | Test 0.0290
+EarlyStopping counter: 2 out of 5
+  Ep 23: Train 0.3072 | Val 0.6368 | Test 0.0260
+EarlyStopping counter: 3 out of 5
+  Ep 24: Train 0.3052 | Val 0.6442 | Test 0.0267
+EarlyStopping counter: 4 out of 5
+  Ep 25: Train 0.3043 | Val 0.6042 | Test 0.0260
+EarlyStopping counter: 5 out of 5
+Early stopping triggered!
+/home/sangukchoi/Stroke_SDA/sda_training.py:615: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(os.path.join(out_dir, 'best_model.pth')))
+Final Test MSE (Best Model): 0.0270
+Finished. Status: Success

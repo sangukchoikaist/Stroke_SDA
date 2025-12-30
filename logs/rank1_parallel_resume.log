@@ -1,0 +1,12 @@
+nohup: ignoring input
+Loading Source Data...
+Loading Source Data (All Healthy)...
+Source Data Loaded: (81491, 50, 8)
+Available GPUs: 4
+[S003] Starting on GPU 1
+[S006] Starting on GPU 3
+[S007] Starting on GPU 2
+[S008] Starting on GPU 2
+[S004] Starting on GPU 0
+[S013] Starting on GPU 0
+All subjects completed.

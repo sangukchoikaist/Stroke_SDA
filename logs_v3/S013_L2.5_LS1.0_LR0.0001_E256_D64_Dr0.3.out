@@ -1,0 +1,33 @@
+Starting Run on GPU 1
+Time: 2025-12-25 05:25:00
+
+[Run Start] Subject S013 | Mode ['SDA'] | Params: L2.5_LS1.0_LR0.0001_E256_D64_Dr0.3
+
+[Fold 1 - SDA] Train: ['S013_T003', 'S013_T006'], Test: S013_T002, Norm: fixed
+/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+  Ep 1: Train 0.5159 | Val 0.7255 | Test 0.0251
+Validation loss decreased (0.725540 --> 0.725540).  Saving model ...
+  Ep 2: Train 0.3278 | Val 0.5852 | Test 0.0211
+Validation loss decreased (0.585169 --> 0.585169).  Saving model ...
+  Ep 3: Train 0.3058 | Val 0.6764 | Test 0.0214
+EarlyStopping counter: 1 out of 5
+  Ep 4: Train 0.3082 | Val 0.6421 | Test 0.0243
+EarlyStopping counter: 2 out of 5
+  Ep 5: Train 0.2910 | Val 0.5362 | Test 0.0256
+Validation loss decreased (0.536244 --> 0.536244).  Saving model ...
+  Ep 6: Train 0.2911 | Val 0.5736 | Test 0.0274
+EarlyStopping counter: 1 out of 5
+  Ep 7: Train 0.2819 | Val 0.5672 | Test 0.0250
+EarlyStopping counter: 2 out of 5
+  Ep 8: Train 0.2709 | Val 0.5662 | Test 0.0306
+EarlyStopping counter: 3 out of 5
+  Ep 9: Train 0.2640 | Val 0.6362 | Test 0.0266
+EarlyStopping counter: 4 out of 5
+  Ep 10: Train 0.2641 | Val 0.6008 | Test 0.0289
+EarlyStopping counter: 5 out of 5
+Early stopping triggered!
+/home/sangukchoi/Stroke_SDA/sda_training.py:615: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(os.path.join(out_dir, 'best_model.pth')))
+Final Test MSE (Best Model): 0.0256
+Finished. Status: Success

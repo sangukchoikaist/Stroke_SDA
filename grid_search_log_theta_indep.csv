@@ -1,0 +1,2 @@
+Subject,LambdaMMD,LambdaSrc,LR,EncDim,DecDim,Dropout,MSE
+S003,1.0,0.3,0.0001,64,32,0.3,0.03333904468928705

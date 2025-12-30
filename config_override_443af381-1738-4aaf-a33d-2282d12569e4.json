@@ -1,0 +1,1 @@
+{"target_subject": "S003", "lambda_mmd": 1.0, "lambda_src": 0.3, "learning_rate": 0.0001, "encoder_layers": [64, 32], "decoder_layers": [64], "dropout": 0.3, "results_dir": "/home/sangukchoi/Stroke_SDA/results_grid_search_theta/S003_L1.0_LS0.3_LR0.0001_E64_D64_Dr0.3", "max_folds": 1, "epochs": 100, "patience": 5, "batch_size": 64, "modes": ["SDA"], "feature_set": "theta"}

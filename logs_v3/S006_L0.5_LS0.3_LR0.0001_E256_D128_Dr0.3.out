@@ -1,0 +1,6 @@
+Starting Run on GPU 2
+Time: 2025-12-24 18:06:22
+
+[Run Start] Subject S006 | Mode ['SDA'] | Params: L0.5_LS0.3_LR0.0001_E256_D128_Dr0.3
+  [Skipping] Found existing model for Fold 1 SDA
+Finished. Status: Success

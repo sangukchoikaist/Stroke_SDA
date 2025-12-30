@@ -1,0 +1,29 @@
+nohup: ignoring input
+Loading Source Data...
+Loading Source Data (All Healthy)...
+Source Data Loaded: (81491, 50, 8)
+Available GPUs: 4
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "/home/sangukchoi/Stroke_SDA/run_final_parallel.py", line 45, in run_subject
+    print(f"[{subj}] Starting on GPU {gpu_id}")
+ValueError: I/O operation on closed file.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sangukchoi/Stroke_SDA/run_final_parallel.py", line 115, in <module>
+    main()
+  File "/home/sangukchoi/Stroke_SDA/run_final_parallel.py", line 109, in main
+    pool.map(run_subject, subjects)
+  File "/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/multiprocessing/pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/multiprocessing/pool.py", line 774, in get
+    raise self._value
+ValueError: I/O operation on closed file.

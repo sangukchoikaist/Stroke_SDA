@@ -13,8 +13,8 @@ import matplotlib.pyplot as plt
 
 # --- Configuration ---
 CONFIG = {
-    'source_h5': 'd:/RSC lab/Codes/Stroke_SDA/output/all_subjects_dataset_ds_hip.h5',
-    'target_h5': 'd:/RSC lab/Codes/Stroke_SDA/output/stroke_dataset_hip.h5',
+    'source_h5': os.path.join('output', 'all_subjects_dataset_ds_hip.h5'),
+    'target_h5': os.path.join('output', 'stroke_dataset_hip.h5'),
     'target_subject': 'S003', 
     'window_size': 50,    
     'stride': 5,          # User requested 5 (More Source Data)
@@ -22,20 +22,22 @@ CONFIG = {
     'batch_size': 64,     
     'learning_rate': 0.0001,
     'epochs': 50,          # User requested 10 with Infinite Loading
-    'lambda_mmd': 0.5,     # User requested 1.5 (3.0 diverged) -> Grid Search found 0.5 best
-    'lambda_src': 0.3,    
+    'lambda_mmd': 1.5,     # Rank 1 Restricted Best
+    'lambda_src': 0.7,     # Rank 1 Best
     'lambda_tgt': 1.0,    
     'input_dim': 8,
     'hidden_dim': 64,
-    'encoder_layers': [128, 64], 
-    'decoder_layers': [128],      # Grid Search found 128 best (was 32)
+    'encoder_layers': [128, 64], # Rank 1 (Enc 128)
+    'decoder_layers': [64],      # Rank 1 (Dec 64)
     'dropout': 0.3,               # Default 0.3
     'output_dim': 2,        
-    'device': 'cuda' if torch.cuda.is_available() else 'cpu',
-    'results_dir': 'results',
-    'patience': 5,        # Early Stopping Patience
-    'min_delta': 0.0005,   # Min improvements
-    'data_fraction': 1.0   # Back to 100% Data
+    'device': 'cpu', # Delayed Init to avoid fork errors
+    'results_dir': 'results_final_rank1', # New Directory
+    'patience': 10,        # Early Stopping Patience 
+    'min_delta': 0.0001,   # Min improvements
+    'data_fraction': 1.0,   # Back to 100% Data
+    'max_folds': 3,          # 3 folds for final paper results
+    'feature_set': 'theta'  # Ensure consistency with global config
 }
 
 # --- Config Override for Analysis ---
@@ -655,9 +657,10 @@ def process_all_subjects():
 
     # Modes to run
     # Check if override limited the subject
-    if 'target_subject' in CONFIG:
-        print(f"!!! Restricting process_all_subjects to {CONFIG['target_subject']} due to override !!!")
-        subjects = [CONFIG['target_subject']]
+    # Check if override limited the subject
+    # if 'target_subject' in CONFIG:
+    #     print(f"!!! Restricting process_all_subjects to {CONFIG['target_subject']} due to override !!!")
+    #     subjects = [CONFIG['target_subject']]
 
     # Modes to run (Default: SDA, TO, SO, TL)
     modes = CONFIG.get('modes', ['SDA', 'TO', 'SO', 'TL']) 
@@ -701,12 +704,90 @@ def process_all_subjects():
                 
                 train_trials = [t for t in target_trials if t != test_trial]
                 try:
-                    train_and_evaluate(i+1, train_trials, test_trial, src_data, src_labels, mode=mode)
-                    break # Run only the first fold for efficiency
+                    norm_mode = 'independent' if mode == 'TO' else 'fixed'
+                    train_and_evaluate(i+1, train_trials, test_trial, src_data, src_labels, mode=mode, normalization=norm_mode)
+                    # break # Run only the first fold for efficiency
                 except Exception as e:
                     print(f"Error processing {subj} {mode} {test_trial}: {e}")
                     import traceback
                     traceback.print_exc()
 
+
+# --- Refactored Entry Point for Grid Search ---
+def train_single_run(config, src_data=None, src_labels=None):
+    """
+    Executes a single training run with the provided config.
+    Optionally accepts pre-loaded source data to save I/O time.
+    """
+    # 1. Setup Config
+    global CONFIG
+    CONFIG.update(config)
+    
+    subj = CONFIG['target_subject']
+    # Select Trial (First one? Or provided in config?)
+    # Grid search usually targets specific trials or all? 
+    # The current grid search runs 1 fold per combination.
+    # We need to know WHICH trial/fold to run.
+    # Let's assume config has 'fold_idx' and 'test_trial' 
+    # But sda_training.py usually iterates.
+    
+    # We'll rely on the existing logic: load CONFIG, determine trials, and run.
+    # But for speed, we need to know exactly what to run.
+    
+    # If src_data is None, load it
+    if src_data is None:
+        src_data, src_labels = load_source_data(CONFIG)
+        
+    target_trials = get_target_trials(CONFIG)
+    
+    # We need to run specifically the fold requested if 'target_fold' is in config?
+    # Or just run all up to max_folds.
+    
+    modes = CONFIG.get('modes', ['SDA'])
+    
+    results = {}
+    
+    print(f"\n[Run Start] Subject {subj} | Mode {modes} | Params: {config.get('run_name', 'Custom')}")
+    
+    for mode in modes:
+        for i, test_trial in enumerate(target_trials):
+            # Check Max Folds
+            if 'max_folds' in CONFIG and (i + 1) > CONFIG['max_folds']:
+                 continue
+                 
+            # If we want specific fold control (e.g. parallel workers doing different folds)
+            # For now, let's assume we stick to the loop but max_folds=1 handles the limit.
+            
+            out_dir = os.path.join(CONFIG['results_dir'], subj, f"Fold_{i+1}_{test_trial}_{mode}_frac{CONFIG['data_fraction']}")
+            os.makedirs(out_dir, exist_ok=True)
+            
+            # Skip check
+            if os.path.exists(os.path.join(out_dir, 'best_model.pth')):
+                 print(f"  [Skipping] Found existing model for Fold {i+1} {mode}")
+                 # Try to return existing MSE
+                 if os.path.exists(os.path.join(out_dir, 'final_mse.txt')):
+                    with open(os.path.join(out_dir, 'final_mse.txt'), 'r') as f:
+                        results[f"{mode}_Fold{i+1}"] = float(f.read().strip())
+                 continue
+            
+            train_trials = [t for t in target_trials if t != test_trial]
+            
+            # Print epoch losses is handled inside train_and_evaluate
+            # But user wants to BE SURE.
+            # train_and_evaluate has print(f"  Ep {epoch+1}...")
+            
+            norm_mode = 'independent' if mode == 'TO' else 'fixed'
+            
+            try:
+                mse = train_and_evaluate(i+1, train_trials, test_trial, src_data, src_labels, mode=mode, normalization=norm_mode)
+                results[f"{mode}_Fold{i+1}"] = mse
+            except Exception as e:
+                print(f"Error in {subj} {mode} Fold {i+1}: {e}")
+                import traceback; traceback.print_exc()
+                
+    return results
+
 if __name__ == "__main__":
+    if torch.cuda.is_available():
+        CONFIG['device'] = 'cuda'
     process_all_subjects()

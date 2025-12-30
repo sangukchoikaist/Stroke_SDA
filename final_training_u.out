@@ -1,0 +1,21 @@
+nohup: ignoring input
+!!! CONFIG OVERRIDE LOADED from config_override.json: {'target_subject': 'S003', 'lambda_mmd': 0.1, 'learning_rate': 0.0001, 'encoder_layers': [64, 32], 'decoder_layers': [32], 'dropout': 0.4, 'results_dir': 'd:/RSC lab/Codes/Stroke_SDA/results_grid_search\\S003_L0.1_LR0.0001_E64_D32_Dr0.4', 'max_folds': 1, 'epochs': 100, 'patience': 5, 'batch_size': 64, 'modes': ['SDA']} !!!
+!!! Restricting process_all_subjects to S003 due to override !!!
+Starting Full Experiment on Subjects: ['S003']
+Modes: ['SDA']
+
+Checking GPU Availability:
+  CUDA Available: True
+  Device Name: NVIDIA RTX A5000
+Loading Source Data (All Healthy)...
+
+
+================================================
+Processing Target Subject: S003
+================================================
+Trials: ['S003_T002', 'S003_T003', 'S003_T006']
+
+--- Mode: SDA ---
+  [Skipping] Model already exists at d:/RSC lab/Codes/Stroke_SDA/results_grid_search\S003_L0.1_LR0.0001_E64_D32_Dr0.4/S003/Fold_1_S003_T002_SDA_frac1.0
+Skipping Fold 2 due to max_folds limit.
+Skipping Fold 3 due to max_folds limit.

@@ -1,0 +1,95 @@
+Starting Run on GPU 2
+Time: 2025-12-24 12:06:25
+
+[Run Start] Subject S003 | Mode ['SDA'] | Params: L1.0_LS0.7_LR0.0001_E256_D64_Dr0.3
+
+[Fold 1 - SDA] Train: ['S003_T003', 'S003_T006'], Test: S003_T002, Norm: fixed
+/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+  Ep 1: Train 0.2726 | Val 0.1818 | Test 0.0201
+Validation loss decreased (0.181776 --> 0.181776).  Saving model ...
+  Ep 2: Train 0.1797 | Val 0.1636 | Test 0.0264
+Validation loss decreased (0.163563 --> 0.163563).  Saving model ...
+  Ep 3: Train 0.1619 | Val 0.1341 | Test 0.0239
+Validation loss decreased (0.134126 --> 0.134126).  Saving model ...
+  Ep 4: Train 0.1506 | Val 0.1220 | Test 0.0232
+Validation loss decreased (0.122013 --> 0.122013).  Saving model ...
+  Ep 5: Train 0.1470 | Val 0.1206 | Test 0.0233
+Validation loss decreased (0.120628 --> 0.120628).  Saving model ...
+  Ep 6: Train 0.1417 | Val 0.1190 | Test 0.0249
+Validation loss decreased (0.119049 --> 0.119049).  Saving model ...
+  Ep 7: Train 0.1377 | Val 0.1071 | Test 0.0231
+Validation loss decreased (0.107149 --> 0.107149).  Saving model ...
+  Ep 8: Train 0.1335 | Val 0.1062 | Test 0.0304
+Validation loss decreased (0.106169 --> 0.106169).  Saving model ...
+  Ep 9: Train 0.1330 | Val 0.1149 | Test 0.0297
+EarlyStopping counter: 1 out of 5
+  Ep 10: Train 0.1309 | Val 0.1001 | Test 0.0269
+Validation loss decreased (0.100119 --> 0.100119).  Saving model ...
+  Ep 11: Train 0.1273 | Val 0.1068 | Test 0.0310
+EarlyStopping counter: 1 out of 5
+  Ep 12: Train 0.1278 | Val 0.1038 | Test 0.0334
+EarlyStopping counter: 2 out of 5
+  Ep 13: Train 0.1283 | Val 0.0980 | Test 0.0272
+Validation loss decreased (0.098006 --> 0.098006).  Saving model ...
+  Ep 14: Train 0.1273 | Val 0.1049 | Test 0.0309
+EarlyStopping counter: 1 out of 5
+  Ep 15: Train 0.1251 | Val 0.1068 | Test 0.0344
+EarlyStopping counter: 2 out of 5
+  Ep 16: Train 0.1229 | Val 0.0917 | Test 0.0314
+Validation loss decreased (0.091712 --> 0.091712).  Saving model ...
+  Ep 17: Train 0.1225 | Val 0.0966 | Test 0.0350
+EarlyStopping counter: 1 out of 5
+  Ep 18: Train 0.1171 | Val 0.0959 | Test 0.0350
+EarlyStopping counter: 2 out of 5
+  Ep 19: Train 0.1172 | Val 0.0928 | Test 0.0320
+EarlyStopping counter: 3 out of 5
+  Ep 20: Train 0.1183 | Val 0.0926 | Test 0.0367
+EarlyStopping counter: 4 out of 5
+  Ep 21: Train 0.1147 | Val 0.0894 | Test 0.0363
+Validation loss decreased (0.089380 --> 0.089380).  Saving model ...
+  Ep 22: Train 0.1170 | Val 0.0921 | Test 0.0366
+EarlyStopping counter: 1 out of 5
+  Ep 23: Train 0.1172 | Val 0.0969 | Test 0.0367
+EarlyStopping counter: 2 out of 5
+  Ep 24: Train 0.1148 | Val 0.0994 | Test 0.0384
+EarlyStopping counter: 3 out of 5
+  Ep 25: Train 0.1142 | Val 0.0860 | Test 0.0366
+Validation loss decreased (0.085990 --> 0.085990).  Saving model ...
+  Ep 26: Train 0.1138 | Val 0.0931 | Test 0.0507
+EarlyStopping counter: 1 out of 5
+  Ep 27: Train 0.1140 | Val 0.0941 | Test 0.0405
+EarlyStopping counter: 2 out of 5
+  Ep 28: Train 0.1072 | Val 0.0961 | Test 0.0415
+EarlyStopping counter: 3 out of 5
+  Ep 29: Train 0.1110 | Val 0.0901 | Test 0.0396
+EarlyStopping counter: 4 out of 5
+  Ep 30: Train 0.1124 | Val 0.0724 | Test 0.0381
+Validation loss decreased (0.072365 --> 0.072365).  Saving model ...
+  Ep 31: Train 0.1097 | Val 0.0693 | Test 0.0454
+Validation loss decreased (0.069311 --> 0.069311).  Saving model ...
+  Ep 32: Train 0.1065 | Val 0.0698 | Test 0.0435
+EarlyStopping counter: 1 out of 5
+  Ep 33: Train 0.1076 | Val 0.0500 | Test 0.0374
+Validation loss decreased (0.049988 --> 0.049988).  Saving model ...
+  Ep 34: Train 0.1156 | Val 0.0582 | Test 0.0385
+EarlyStopping counter: 1 out of 5
+  Ep 35: Train 0.1038 | Val 0.1186 | Test 0.0357
+EarlyStopping counter: 2 out of 5
+  Ep 36: Train 0.1112 | Val 0.0036 | Test 0.0422
+Validation loss decreased (0.003594 --> 0.003594).  Saving model ...
+  Ep 37: Train 0.5746 | Val 0.1511 | Test 0.1051
+EarlyStopping counter: 1 out of 5
+  Ep 38: Train 0.1699 | Val 0.0211 | Test 0.0602
+EarlyStopping counter: 2 out of 5
+  Ep 39: Train 0.1249 | Val 0.1368 | Test 0.0477
+EarlyStopping counter: 3 out of 5
+  Ep 40: Train 0.1201 | Val 0.1153 | Test 0.0509
+EarlyStopping counter: 4 out of 5
+  Ep 41: Train 0.1290 | Val 0.0840 | Test 0.0325
+EarlyStopping counter: 5 out of 5
+Early stopping triggered!
+/home/sangukchoi/Stroke_SDA/sda_training.py:615: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(os.path.join(out_dir, 'best_model.pth')))
+Final Test MSE (Best Model): 0.0422
+Finished. Status: Success

@@ -1,0 +1,31 @@
+Starting Run on GPU 1
+Time: 2025-12-24 18:26:52
+
+[Run Start] Subject S006 | Mode ['SDA'] | Params: L0.5_LS1.0_LR0.0001_E128_D128_Dr0.3
+
+[Fold 1 - SDA] Train: ['S006_T004', 'S006_T006'], Test: S006_T001, Norm: fixed
+/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+  Ep 1: Train 0.2789 | Val 0.1561 | Test 0.0369
+Validation loss decreased (0.156136 --> 0.156136).  Saving model ...
+  Ep 2: Train 0.1206 | Val 0.1143 | Test 0.0382
+Validation loss decreased (0.114265 --> 0.114265).  Saving model ...
+  Ep 3: Train 0.1038 | Val 0.1111 | Test 0.0301
+Validation loss decreased (0.111073 --> 0.111073).  Saving model ...
+  Ep 4: Train 0.0993 | Val 0.1006 | Test 0.0313
+Validation loss decreased (0.100604 --> 0.100604).  Saving model ...
+  Ep 5: Train 0.0974 | Val 0.1164 | Test 0.0281
+EarlyStopping counter: 1 out of 5
+  Ep 6: Train 0.0955 | Val 0.1128 | Test 0.0303
+EarlyStopping counter: 2 out of 5
+  Ep 7: Train 0.0940 | Val 0.1052 | Test 0.0309
+EarlyStopping counter: 3 out of 5
+  Ep 8: Train 0.0913 | Val 0.1034 | Test 0.0312
+EarlyStopping counter: 4 out of 5
+  Ep 9: Train 0.0906 | Val 0.1064 | Test 0.0334
+EarlyStopping counter: 5 out of 5
+Early stopping triggered!
+/home/sangukchoi/Stroke_SDA/sda_training.py:615: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(os.path.join(out_dir, 'best_model.pth')))
+Final Test MSE (Best Model): 0.0313
+Finished. Status: Success

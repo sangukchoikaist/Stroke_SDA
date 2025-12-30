@@ -1,0 +1,65 @@
+Starting Run on GPU 1
+Time: 2025-12-24 13:14:38
+
+[Run Start] Subject S003 | Mode ['SDA'] | Params: L2.0_LS0.7_LR0.0001_E256_D64_Dr0.3
+
+[Fold 1 - SDA] Train: ['S003_T003', 'S003_T006'], Test: S003_T002, Norm: fixed
+/home/sangukchoi/.conda/envs/torch_gpu/lib/python3.10/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+  Ep 1: Train 0.4420 | Val 0.3110 | Test 0.0241
+Validation loss decreased (0.310998 --> 0.310998).  Saving model ...
+  Ep 2: Train 0.2931 | Val 0.2351 | Test 0.0270
+Validation loss decreased (0.235134 --> 0.235134).  Saving model ...
+  Ep 3: Train 0.2691 | Val 0.2344 | Test 0.0270
+Validation loss decreased (0.234430 --> 0.234430).  Saving model ...
+  Ep 4: Train 0.2600 | Val 0.1957 | Test 0.0274
+Validation loss decreased (0.195715 --> 0.195715).  Saving model ...
+  Ep 5: Train 0.2553 | Val 0.1906 | Test 0.0300
+Validation loss decreased (0.190562 --> 0.190562).  Saving model ...
+  Ep 6: Train 0.2445 | Val 0.1802 | Test 0.0277
+Validation loss decreased (0.180188 --> 0.180188).  Saving model ...
+  Ep 7: Train 0.2433 | Val 0.2036 | Test 0.0297
+EarlyStopping counter: 1 out of 5
+  Ep 8: Train 0.2329 | Val 0.1821 | Test 0.0239
+EarlyStopping counter: 2 out of 5
+  Ep 9: Train 0.2300 | Val 0.1846 | Test 0.0233
+EarlyStopping counter: 3 out of 5
+  Ep 10: Train 0.2317 | Val 0.1694 | Test 0.0212
+Validation loss decreased (0.169407 --> 0.169407).  Saving model ...
+  Ep 11: Train 0.2282 | Val 0.1730 | Test 0.0232
+EarlyStopping counter: 1 out of 5
+  Ep 12: Train 0.2205 | Val 0.1766 | Test 0.0237
+EarlyStopping counter: 2 out of 5
+  Ep 13: Train 0.2204 | Val 0.1698 | Test 0.0215
+EarlyStopping counter: 3 out of 5
+  Ep 14: Train 0.2236 | Val 0.1645 | Test 0.0259
+Validation loss decreased (0.164473 --> 0.164473).  Saving model ...
+  Ep 15: Train 0.2154 | Val 0.1845 | Test 0.0243
+EarlyStopping counter: 1 out of 5
+  Ep 16: Train 0.2176 | Val 0.1661 | Test 0.0240
+EarlyStopping counter: 2 out of 5
+  Ep 17: Train 0.2102 | Val 0.1628 | Test 0.0237
+Validation loss decreased (0.162829 --> 0.162829).  Saving model ...
+  Ep 18: Train 0.2121 | Val 0.1717 | Test 0.0215
+EarlyStopping counter: 1 out of 5
+  Ep 19: Train 0.2170 | Val 0.1623 | Test 0.0301
+EarlyStopping counter: 2 out of 5
+  Ep 20: Train 0.2073 | Val 0.1741 | Test 0.0235
+EarlyStopping counter: 3 out of 5
+  Ep 21: Train 0.2039 | Val 0.1506 | Test 0.0246
+Validation loss decreased (0.150614 --> 0.150614).  Saving model ...
+  Ep 22: Train 0.2065 | Val 0.1704 | Test 0.0253
+EarlyStopping counter: 1 out of 5
+  Ep 23: Train 0.2069 | Val 0.1610 | Test 0.0246
+EarlyStopping counter: 2 out of 5
+  Ep 24: Train 0.1996 | Val 0.1660 | Test 0.0233
+EarlyStopping counter: 3 out of 5
+  Ep 25: Train 0.2089 | Val 0.1783 | Test 0.0291
+EarlyStopping counter: 4 out of 5
+  Ep 26: Train 0.2039 | Val 0.1610 | Test 0.0249
+EarlyStopping counter: 5 out of 5
+Early stopping triggered!
+/home/sangukchoi/Stroke_SDA/sda_training.py:615: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(os.path.join(out_dir, 'best_model.pth')))
+Final Test MSE (Best Model): 0.0246
+Finished. Status: Success
