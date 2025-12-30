@@ -21,6 +21,7 @@ import h5py
 
 # Import from training script to ensure consistency
 from sda_training import CONFIG, SDA_Dual_Model, load_target_data_by_trials, get_target_trials, GaitDataset
+import scipy.stats as stats
 
 # --- No manual config or class defs needed ---
 CONFIG['device'] = 'cpu' # Force CPU for plots
@@ -196,158 +197,338 @@ def generate_plots():
     plt.savefig('paper_plot_timeseries.png', dpi=300)
     print("Saved paper_plot_timeseries.png")
 
-    # 2. Bar Chart (RMSE & Max Error Comparison)
-    # We collect RMSE and Max Error of Phase across all folds
-    rmse_means = {'SDA': [], 'TO': [], 'TL': []}
-    rmse_stds = {'SDA': [], 'TO': [], 'TL': []}
-    max_means = {'SDA': [], 'TO': [], 'TL': []}
-    max_stds = {'SDA': [], 'TO': [], 'TL': []}
-    
-    # Helper (Integrated Loop)
-    for subj in subjects:
-        s_path = os.path.join(CONFIG['results_dir'], subj)
-        if not os.path.exists(s_path): 
-            for k in rmse_means: 
-                rmse_means[k].append(0); rmse_stds[k].append(0)
-                max_means[k].append(0); max_stds[k].append(0)
-            continue
-            
-        curr_vals = {'SDA': [], 'TO': [], 'TL': []}
-        curr_maxs = {'SDA': [], 'TO': [], 'TL': []}
-        
-        for d in os.listdir(s_path):
-            full_d = os.path.join(s_path, d)
-            if not os.path.isdir(full_d): continue
-            
-            # Determine Mode
-            mode = None
-            if "_SDA_" in d: mode = 'SDA'
-            # elif "_SO_" in d: mode = 'SO' # Exclude SO from logic as requested
-            elif "_TO_" in d: mode = 'TO'
-            elif "_TL_" in d: mode = 'TL'
-            else: continue
-            
-            val_rmse = None
-            val_max = None
-            
-            rmse_path = os.path.join(full_d, 'final_rmse_pct.txt')
-            max_path = os.path.join(full_d, 'final_max_error_pct.txt')
-            
-            # Check if both exist
-            if os.path.exists(rmse_path) and os.path.exists(max_path):
-                try: 
-                    val_rmse = float(open(rmse_path).read().strip())
-                    val_max = float(open(max_path).read().strip())
-                except: pass
-            
-            if val_rmse is None or val_max is None:
-                # Recalc logic
-                model_path = os.path.join(full_d, 'final_model.pth')
-                if not os.path.exists(model_path): model_path = os.path.join(full_d, 'best_model.pth')
-                if os.path.exists(model_path):
-                    try:
-                        pts = d.split('_'); idx = pts.index(mode)
-                        trial = "_".join(pts[2:idx])
-                        # Load Data
-                        scaler_path = os.path.join(full_d, 'scaler.pkl')
-                        Xt, Yt = load_data_consistent(trial, scaler_path)
-                        
-                        if Xt is not None:
-                            m = SDA_Dual_Model(CONFIG)
-                            m.load_state_dict(torch.load(model_path, map_location='cpu'))
-                            m.eval()
-                            with torch.no_grad():
-                                if mode == 'SO': param = 'source'
-                                else: param = 'target'
-                                p, _ = m(Xt, domain=param)
-                                # Metrics
-                                val_rmse = calculate_rmse(p.numpy(), Yt)
-                                val_max = calculate_max_error(p.numpy(), Yt)
-                                
-                                with open(rmse_path, 'w') as f: f.write(str(val_rmse))
-                                with open(max_path, 'w') as f: f.write(str(val_max))
-                    except Exception as e: 
-                        pass
-            
-            if val_rmse is not None: curr_vals[mode].append(val_rmse)
-            if val_max is not None: curr_maxs[mode].append(val_max)
-            
-        # Aggregate stats
-        for k in rmse_means:
-            if curr_vals[k]:
-                rmse_means[k].append(np.mean(curr_vals[k]))
-                rmse_stds[k].append(np.std(curr_vals[k]) if len(curr_vals[k]) > 1 else 0)
-                max_means[k].append(np.mean(curr_maxs[k]))
-                max_stds[k].append(np.std(curr_maxs[k]) if len(curr_maxs[k]) > 1 else 0)
-            else:
-                rmse_means[k].append(0); rmse_stds[k].append(0)
-                max_means[k].append(0); max_stds[k].append(0)
-
     # Calculate Overall Stats (Grand Mean over all subjects' means)
     subjects_plus = subjects + ['Overall']
-    for k in rmse_means:
-        # Avoid zero entries if any
-        valid_rmse = [v for v in rmse_means[k] if v > 0]
-        valid_max = [v for v in max_means[k] if v > 0]
+    
+    # Collect GLOBAL raw values for statistics (SDA vs others)
+    global_rmse = {'SDA': [], 'TO': [], 'TL': [], 'SO': []} 
+    
+    # We need to re-iterate or store them during the main loop. 
+    # Let's re-build the collection logic slightly to be cleaner or just iterate again?
+    # Better to store in the main loop. But variables are local.
+    # Let's modify the collection part above to populate global lists.
+    
+    # ... Wait, I can't easily jump back to the loop in replace_file_content.
+    # I will rewrite the loop section and the plotting section.
+    
+    # Let's restart the Main Loop logic here for clarity in Replacement
+    
+    rmse_means = {'SDA': [], 'TO': [], 'TL': [], 'SO': [], 'SO_TS': [], 'TL_TS': []}
+    rmse_stds = {'SDA': [], 'TO': [], 'TL': [], 'SO': [], 'SO_TS': [], 'TL_TS': []}
+    max_means = {'SDA': [], 'TO': [], 'TL': [], 'SO': [], 'SO_TS': [], 'TL_TS': []}
+    max_stds = {'SDA': [], 'TO': [], 'TL': [], 'SO': [], 'SO_TS': [], 'TL_TS': []}
+    
+    # Global containers for Paired T-Test
+    stats_sda_to = {'SDA': [], 'TO': []}
+    stats_sda_tl = {'SDA': [], 'TL': []}
+    stats_sda_so = {'SDA': [], 'SO': []}
+    stats_sda_sots = {'SDA': [], 'SO_TS': []}
+    stats_sda_tlts = {'SDA': [], 'TL_TS': []}
+    
+    for subj in subjects:
+        s_path = os.path.join(CONFIG['results_dir'], subj)
         
-        if valid_rmse:
-            overall_rmse_mean = np.mean(valid_rmse)
-            overall_rmse_std = np.std(valid_rmse)
-            rmse_means[k].append(overall_rmse_mean)
-            rmse_stds[k].append(overall_rmse_std)
+        # Temp storage for this subject to compute mean/std
+        subj_rmse = {'SDA': [], 'TO': [], 'TL': [], 'SO': [], 'SO_TS': [], 'TL_TS': []}
+        subj_max = {'SDA': [], 'TO': [], 'TL': [], 'SO': [], 'SO_TS': [], 'TL_TS': []}
+        
+        if os.path.exists(s_path): 
+             # We need to iterate folds to ensure alignment
+             for fold in [1, 2, 3]:
+                 found_fold = {'SDA': None, 'TO': None, 'TL': None, 'SO': None, 'SO_TS': 'Recalc', 'TL_TS': 'Recalc'}
+                 
+                 for d in os.listdir(s_path):
+                     if d.startswith(f"Fold_{fold}_"):
+                         if "_SDA_" in d and "beta" not in d: found_fold['SDA'] = d
+                         elif "_TO_" in d: 
+                             # Prioritize IndepNorm if duplicate exists
+                             if "IndepNorm" in d:
+                                 found_fold['TO'] = d
+                             elif found_fold['TO'] is None:
+                                 found_fold['TO'] = d
+                         elif "_TL_" in d: 
+                             if "IndepNorm" in d:
+                                 found_fold['TL_TS'] = d
+                             else:
+                                 found_fold['TL'] = d
+                     elif "_SO_" in d: found_fold['SO'] = d
+                 
+                 # Load values
+                 fold_vals = {}
+                 for m in ['SDA', 'TO', 'TL', 'SO', 'SO_TS', 'TL_TS']:
+                     val = None
+                     vmax = None
+                     
+                     # Determine Source Directory for Model/Results
+                     target_fold_retrieval = m 
+                     if m == 'SO_TS': target_fold_retrieval = 'SO'
+                     
+                     if found_fold[target_fold_retrieval]:
+                         full_d = os.path.join(s_path, found_fold[target_fold_retrieval])
+                         
+                         if m == 'SO_TS':
+                             # Always recalc on fly
+                             pass
+                         else:
+                             rmse_path = os.path.join(full_d, 'final_rmse_pct.txt')
+                             max_path = os.path.join(full_d, 'final_max_error_pct.txt')
+                             if os.path.exists(rmse_path):
+                                 try: val = float(open(rmse_path).read().strip())
+                                 except: pass
+                             if os.path.exists(max_path):
+                                 try: vmax = float(open(max_path).read().strip())
+                                 except: pass
+
+                         if val is None or vmax is None:
+                             # Recalc logic
+                             model_path = os.path.join(full_d, 'final_model.pth')
+                             if not os.path.exists(model_path): model_path = os.path.join(full_d, 'best_model.pth')
+                             
+                             if os.path.exists(model_path):
+                                 try:
+                                     # Infer trial from folder name: Fold_1_S003_T002_SDA_...
+                                     # Folder name corresponds to target_fold_retrieval
+                                     pts = found_fold[target_fold_retrieval].split('_')
+                                     try:
+                                         if target_fold_retrieval in pts: idx = pts.index(target_fold_retrieval)
+                                         else: idx = 4 # Fallback assumption
+                                         trial = "_".join(pts[2:idx])
+                                     except: 
+                                         trial = None
+                                     
+                                     if trial:
+                                         if m == 'SO_TS': # Special handling for On-the-fly Mode
+                                              # print(f"DEBUG: Processing {m} for {subj} {trial}")
+                                              X_raw, Y_raw = load_target_data_by_trials(CONFIG, [trial])
+                                              
+                                              if len(X_raw) > 0:
+                                                  # Fit Scaler on TEST data
+                                                  N, T, F = X_raw.shape
+                                                  scaler = StandardScaler()
+                                                  X_flat = X_raw.reshape(-1, F)
+                                                  X_norm_flat = scaler.fit_transform(X_flat)
+                                                  X_norm = X_norm_flat.reshape(N, T, F)
+                                                  Xt = torch.tensor(X_norm, dtype=torch.float32)
+                                                  Yt = Y_raw
+                                              else: 
+                                                  Xt, Yt = None, None
+                                                  # print(f"WARNING: No data for {m} {subj} {trial}")
+                                              
+                                              param = 'source'
+                                         else:
+                                             scaler_path = os.path.join(full_d, 'scaler.pkl')
+                                             Xt, Yt = load_data_consistent(trial, scaler_path)
+                                             if m == 'SO': param = 'source'
+                                             else: param = 'target'
+                                         
+                                         if Xt is not None:
+                                             model = SDA_Dual_Model(CONFIG)
+                                             model.load_state_dict(torch.load(model_path, map_location='cpu'))
+                                             model.eval()
+                                             with torch.no_grad():
+                                                 p, _ = model(Xt, domain=param)
+                                                 val = calculate_rmse(p.numpy(), Yt)
+                                                 vmax = calculate_max_error(p.numpy(), Yt)
+                                                 
+                                                 # Save only if it's a real folder based recalc
+                                                 if m not in ['SO_TS', 'TL_TS']:
+                                                     with open(rmse_path, 'w') as f: f.write(str(val))
+                                                     with open(max_path, 'w') as f: f.write(str(vmax))
+                                 except Exception as e:
+                                     print(f"Error recalc {m} {subj}: {e}")
+
+                         if val is not None:
+                             subj_rmse[m].append(val)
+                         if vmax is not None:
+                             subj_max[m].append(vmax)
+                         
+                         fold_vals[m] = val
+                     else:
+                         fold_vals[m] = None
+                 
+                 # Collect Paired Data for Stats
+                 if fold_vals['SDA'] is not None and fold_vals['TO'] is not None:
+                     stats_sda_to['SDA'].append(fold_vals['SDA'])
+                     stats_sda_to['TO'].append(fold_vals['TO'])
+                     
+                 if fold_vals['SDA'] is not None and fold_vals['TL'] is not None:
+                     stats_sda_tl['SDA'].append(fold_vals['SDA'])
+                     stats_sda_tl['TL'].append(fold_vals['TL'])
+
+                 if fold_vals['SDA'] is not None and fold_vals['SO'] is not None:
+                     stats_sda_so['SDA'].append(fold_vals['SDA'])
+                     stats_sda_so['SO'].append(fold_vals['SO'])
+                 
+                 if fold_vals['SDA'] is not None and fold_vals['SO_TS'] is not None:
+                     stats_sda_sots['SDA'].append(fold_vals['SDA'])
+                     stats_sda_sots['SO_TS'].append(fold_vals['SO_TS'])
+                 
+                 if fold_vals['SDA'] is not None and fold_vals['TL_TS'] is not None:
+                     stats_sda_tlts['SDA'].append(fold_vals['SDA'])
+                     stats_sda_tlts['TL_TS'].append(fold_vals['TL_TS'])
+        
+        # After processing a subject, store means
+        for k in ['SDA', 'TO', 'TL', 'SO', 'SO_TS', 'TL_TS']:
+            if subj_rmse[k]:
+                rmse_means[k].append(np.mean(subj_rmse[k]))
+                rmse_stds[k].append(np.std(subj_rmse[k], ddof=1) if len(subj_rmse[k])>1 else 0)
+                max_means[k].append(np.mean(subj_max[k]))
+                max_stds[k].append(np.std(subj_max[k], ddof=1) if len(subj_max[k])>1 else 0)
+            else:
+                 rmse_means[k].append(0); rmse_stds[k].append(0)
+                 max_means[k].append(0); max_stds[k].append(0)
+
+    # Perform T-Tests on the aggregated paired data
+    print("\n>>> Statistical Significance (Paired t-test) <<<")
+    # SDA vs TO
+    if len(stats_sda_to['SDA']) > 1:
+        stat, p = stats.ttest_rel(stats_sda_to['SDA'], stats_sda_to['TO'])
+        print(f"SDA vs TO (N={len(stats_sda_to['SDA'])}): t={stat:.4f}, p={p:.5e}")
+    else:
+        print("Not enough paired data for SDA vs TO")
+
+    # SDA vs TL
+    if len(stats_sda_tl['SDA']) > 1:
+        stat, p = stats.ttest_rel(stats_sda_tl['SDA'], stats_sda_tl['TL'])
+        print(f"SDA vs TL (N={len(stats_sda_tl['SDA'])}): t={stat:.4f}, p={p:.5e}")
+
+    # SDA vs SO
+    if len(stats_sda_so['SDA']) > 1:
+        stat, p = stats.ttest_rel(stats_sda_so['SDA'], stats_sda_so['SO'])
+        print(f"SDA vs SO (N={len(stats_sda_so['SDA'])}): t={stat:.4f}, p={p:.5e}")
+
+    # SDA vs SO_TS
+    if len(stats_sda_sots['SDA']) > 1:
+        stat, p = stats.ttest_rel(stats_sda_sots['SDA'], stats_sda_sots['SO_TS'])
+        print(f"SDA vs SO_TS (N={len(stats_sda_sots['SDA'])}): t={stat:.4f}, p={p:.5e}")
+
+    # SDA vs TL_TS
+    if len(stats_sda_tlts['SDA']) > 1:
+        stat, p = stats.ttest_rel(stats_sda_tlts['SDA'], stats_sda_tlts['TL_TS'])
+        print(f"SDA vs TL_TS (N={len(stats_sda_tlts['SDA'])}): t={stat:.4f}, p={p:.5e}")
+
+    # Calculate Overall Mean/Std
+    for m in ['SDA', 'TO', 'TL', 'SO', 'SO_TS', 'TL_TS']:
+        vals = rmse_means[m]
+        if len(vals) > 0:
+            overall_mu = np.mean(vals)
+            overall_sigma = np.std(vals)
         else:
-            rmse_means[k].append(0); rmse_stds[k].append(0)
+            overall_mu = 0
+            overall_sigma = 0
             
-        if valid_max:
-            overall_max_mean = np.mean(valid_max)
-            overall_max_std = np.std(valid_max)
-            max_means[k].append(overall_max_mean)
-            max_stds[k].append(overall_max_std)
+        rmse_means[m].append(overall_mu)
+        rmse_stds[m].append(overall_sigma)
+        
+        vals_max = max_means[m]
+        if len(vals_max) > 0:
+            overall_mu_max = np.mean(vals_max)
+            overall_sigma_max = np.std(vals_max)
         else:
-            max_means[k].append(0); max_stds[k].append(0)
+            overall_mu_max = 0
+            overall_sigma_max = 0
+        
+        max_means[m].append(overall_mu_max)
+        max_stds[m].append(overall_sigma_max)
+        
+    # Font Settings
+    plt.rcParams['font.family'] = 'sans-serif'
+    plt.rcParams['font.sans-serif'] = ['Arial', 'Liberation Sans', 'DejaVu Sans']
 
-    # Plot Bar (RMSE & Max Error Subplots)
+    # --- Plotting ---
+    subjects_plus = subjects + ['Overall']
     x = np.arange(len(subjects_plus))
-    # Make Overall separated? Just add to end for now.
-    width = 0.25 
-    fig, axes = plt.subplots(1, 2, figsize=(18, 6)) # Wider for extra bar
     
-    modes_to_plot = [('TO', 'Target Only', 'green'), 
-                     ('TL', 'Fine-Tuning', 'orange'), 
-                     ('SDA', 'SDA (Proposed)', 'firebrick')]
+    # Updated Modes to Plot (User Request: Improved Design)
+    # Professional Palette (Flat UI Colors)
+    modes_to_plot = [
+        ('SO_TS', 'Source Only', '#95A5A6'),   # Concrete Gray
+        ('TO', 'Target Only', '#3498DB'),      # Peter River Blue
+        ('TL_TS', 'Fine-Tuning', '#F39C12'),   # Orange
+        ('SDA', 'SDA (Proposed)', '#E74C3C')   # Alizarin Red
+    ]
     
-    # Subplot 1: RMSE
-    for i, (m_key, m_label, m_color) in enumerate(modes_to_plot):
-        offset = (i - 1) * width
-        axes[0].bar(x + offset, rmse_means[m_key], width, yerr=rmse_stds[m_key], 
-                label=m_label, color=m_color, alpha=0.8, capsize=5)
+    width = 0.18 # Wider bars for 4 categories
     
-    axes[0].set_ylabel('Phase RMSE (%) - Lower is Better')
-    axes[0].set_title('Mean RMSE (3-Fold CV)')
-    axes[0].set_xticks(x)
-    axes[0].set_xticklabels(subjects_plus)
-    # Highlight Overall?
-    # axes[0].axvline(x[-2] + 0.5, color='k', linestyle='--', alpha=0.3)
-    
-    axes[0].legend()
-    axes[0].grid(axis='y', linestyle='--', alpha=0.5)
+    # Common Plot Style Helper
+    def apply_style(ax):
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_linewidth(1.5)
+        ax.spines['bottom'].set_linewidth(1.5)
+        ax.grid(axis='y', linestyle=':', alpha=0.6, color='gray')
+        ax.set_axisbelow(True) 
+        ax.tick_params(axis='both', which='major', labelsize=14, width=1.5) # Increased Tick Font
 
-    # Subplot 2: Max Error
-    for i, (m_key, m_label, m_color) in enumerate(modes_to_plot):
-        offset = (i - 1) * width
-        axes[1].bar(x + offset, max_means[m_key], width, yerr=max_stds[m_key], 
-                label=m_label, color=m_color, alpha=0.8, capsize=5)
+    # 1. RMSE Plot
+    # Compact Size for Single Column (scaled heavily, so fonts must be huge)
+    fig, ax = plt.subplots(figsize=(8, 5)) 
     
-    axes[1].set_ylabel('Max Phase Error (%) - Lower is Better')
-    axes[1].set_title('Mean Maximum Error (3-Fold CV)')
-    axes[1].set_xticks(x)
-    axes[1].set_xticklabels(subjects_plus)
-    axes[1].legend()
-    axes[1].grid(axis='y', linestyle='--', alpha=0.5)
+    # Adjust width for tighter spacing
+    width = 0.18 
+    
+    for i, (m_key, m_label, m_color) in enumerate(modes_to_plot):
+        offset = (i - 1.5) * width 
+        rects = ax.bar(x + offset, rmse_means[m_key], width, yerr=rmse_stds[m_key], 
+                label=m_label, color=m_color, alpha=0.9, capsize=4, error_kw={'elinewidth': 1.8, 'ecolor': '#404040'})
+    
+    ax.set_ylabel('Gait Phase Estimation RMSE (%)', fontsize=16, fontweight='bold') # Huge Label
+    ax.set_xticks(x)
+    ax.set_xticklabels(subjects_plus, fontsize=14, fontweight='bold')
+    # Legend: remove title, make distinct
+    ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), ncol=2, frameon=False, fontsize=13) 
+    
+    apply_style(ax)
     
     plt.tight_layout()
-    plt.savefig('paper_plot_bar.png', dpi=300)
-    print("Saved paper_plot_bar.png with RMSE and Max Error (including Overall)")
+    
+    # Save Vector Formats
+    plt.savefig('paper_plot_bar_rmse.pdf', format='pdf', dpi=300, bbox_inches='tight')
+    plt.savefig('paper_plot_bar_rmse.svg', format='svg', bbox_inches='tight')
+    plt.savefig('paper_plot_bar_rmse.eps', format='eps', dpi=300, bbox_inches='tight') # Added EPS
+    plt.savefig('paper_plot_bar_rmse.png', dpi=300, bbox_inches='tight') 
+    print("Saved paper_plot_bar_rmse in PDF, SVG, EPS, PNG (Paper-Ready)")
+    plt.close()
+ 
+    # 2. Max Error Plot
+    fig, ax = plt.subplots(figsize=(8, 5))
+    for i, (m_key, m_label, m_color) in enumerate(modes_to_plot):
+        offset = (i - 1.5) * width
+        ax.bar(x + offset, max_means[m_key], width, yerr=max_stds[m_key], 
+                label=m_label, color=m_color, alpha=0.9, capsize=4, error_kw={'elinewidth': 1.8, 'ecolor': '#404040'})
+    
+    ax.set_ylabel('Gait Phase Est. Max Error (%)', fontsize=16, fontweight='bold') # Shortened label for fit
+    ax.set_xticks(x)
+    ax.set_xticklabels(subjects_plus, fontsize=14, fontweight='bold')
+    ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), ncol=2, frameon=False, fontsize=13)
+    
+    apply_style(ax)
+    
+    plt.tight_layout()
+    plt.savefig('paper_plot_bar_max.pdf', format='pdf', dpi=300, bbox_inches='tight')
+    plt.savefig('paper_plot_bar_max.svg', format='svg', bbox_inches='tight')
+    plt.savefig('paper_plot_bar_max.eps', format='eps', dpi=300, bbox_inches='tight') # Added EPS
+    plt.savefig('paper_plot_bar_max.png', dpi=300, bbox_inches='tight')
+    print("Saved paper_plot_bar_max in PDF, SVG, EPS, PNG (Paper-Ready)")
+    plt.close()
+ 
+    # --- Print Markdown Table ---
+    print("\n### Quantitative Results (RMSE %)")
+    print("| Subject | Source Only | Target Only | Fine-Tuning | SDA |")
+    print("| :--- | :---: | :---: | :---: | :---: |")
+    
+    for i, subj in enumerate(subjects_plus):
+        row_str = f"| **{subj}** |"
+        # User requested: SO -> SO_TS data, Fine-Tuning -> TL_TS data
+        for m in ['SO_TS', 'TO', 'TL_TS', 'SDA']:
+            mu = rmse_means[m][i]
+            sigma = rmse_stds[m][i]
+            if mu == 0 and sigma == 0:
+                row_str += " - |"
+            else:
+                row_str += f" {mu:.2f} ± {sigma:.2f} |"
+        print(row_str)
+    print("\n")
 
 if __name__ == "__main__":
     generate_plots()

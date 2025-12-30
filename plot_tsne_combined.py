@@ -3,10 +3,15 @@ import matplotlib.pyplot as plt
 import os
 
 # Configuration
-results_dir = 'd:/RSC lab/Codes/Stroke_SDA/results_analysis/Batch_SDA_Effect'
+# Configuration
+results_dir = 'results_analysis/Batch_SDA_Effect'
 subjects = ['S003', 'S004', 'S006', 'S007', 'S008', 'S013']
 display_names = ['S001', 'S002', 'S003', 'S004', 'S005', 'S006'] # User requested Mapping
 output_file = os.path.join(results_dir, 'combined_tsne_effect.png')
+
+# Font Settings
+plt.rcParams['font.family'] = 'sans-serif'
+plt.rcParams['font.sans-serif'] = ['Arial', 'Liberation Sans', 'DejaVu Sans']
 
 def plot_combined_tsne():
     fig, axes = plt.subplots(2, 6, figsize=(20, 7)) # 6 cols, 2 rows

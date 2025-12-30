@@ -697,6 +697,8 @@ def process_all_subjects():
                 # Check if result already exists (Skip if done to save time?)
                 # Construct expected output dir
                 out_dir = os.path.join(CONFIG['results_dir'], subj, f"Fold_{i+1}_{test_trial}_{mode}_frac{CONFIG['data_fraction']}")
+                suffix = "_IndepNorm" if CONFIG.get('normalization') == 'independent' else ""
+                out_dir += suffix
                 flag_file = os.path.join(out_dir, 'final_model.pth')
                 if os.path.exists(os.path.join(out_dir, 'best_model.pth')):
                     print(f"  [Skipping] Model already exists at {out_dir}")
@@ -759,6 +761,9 @@ def train_single_run(config, src_data=None, src_labels=None):
             # For now, let's assume we stick to the loop but max_folds=1 handles the limit.
             
             out_dir = os.path.join(CONFIG['results_dir'], subj, f"Fold_{i+1}_{test_trial}_{mode}_frac{CONFIG['data_fraction']}")
+            norm_mode = CONFIG.get('normalization', 'independent' if mode == 'TO' else 'fixed')
+            if norm_mode == 'independent': out_dir += "_IndepNorm"
+            
             os.makedirs(out_dir, exist_ok=True)
             
             # Skip check
@@ -775,8 +780,6 @@ def train_single_run(config, src_data=None, src_labels=None):
             # Print epoch losses is handled inside train_and_evaluate
             # But user wants to BE SURE.
             # train_and_evaluate has print(f"  Ep {epoch+1}...")
-            
-            norm_mode = 'independent' if mode == 'TO' else 'fixed'
             
             try:
                 mse = train_and_evaluate(i+1, train_trials, test_trial, src_data, src_labels, mode=mode, normalization=norm_mode)

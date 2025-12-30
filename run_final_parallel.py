@@ -24,8 +24,9 @@ RANK1_CONFIG = {
     'max_folds': 3,
     'data_fraction': 1.0,
     'feature_set': 'theta',
-    'modes': ['SDA', 'TO', 'SO', 'TL'], # All modes
-    'results_dir': 'results_final_rank1'
+    'modes': ['TL'], # Only TL for this experiment
+    'normalization': 'independent', # Enable Target Scaler
+    'results_dir': 'results_final_rank1' # Keep same dir structure, output folder will have _IndepNorm suffix
 }
 
 # Globals for Workers
