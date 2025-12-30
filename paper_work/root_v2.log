@@ -1,0 +1,521 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.17)  30 DEC 2025 15:47
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"d:/RSC lab/Codes/Stroke_SDA/paper_work/root_v2.tex"
+(d:/RSC lab/Codes/Stroke_SDA/paper_work/root_v2.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(ieeeconf.cls
+Document Class: ieeeconf 2016/4/23 revision V1.6b by Pradeep Misra
+\@IEEEtrantmpdimenA=\dimen140
+\@IEEEtrantmpdimenB=\dimen141
+\@IEEEtrantmpcountA=\count187
+\@IEEEtrantmpcountB=\count188
+\@IEEEtrantmptoksA=\toks17
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 794.
+(D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+\@IEEEnormalsizefontbaselineskip=\skip48
+
+-- This is a 10 point document.
+\normalsizebaselineskip=\skip49
+\normaljot=\skip50
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <16> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+\IEEEilabelindentA=\dimen142
+\IEEEilabelindentB=\dimen143
+\IEEEilabelindent=\dimen144
+\IEEEelabelindent=\dimen145
+\IEEEdlabelindent=\dimen146
+\labelindent=\dimen147
+\IEEEiednormlabelsep=\dimen148
+\IEEEiedmathlabelsep=\dimen149
+\IEEEiedtopsep=\skip51
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@IEEEsubequation=\count193
+\abovecaptionskip=\skip52
+\belowcaptionskip=\skip53
+\c@figure=\count194
+\c@table=\count195
+\@IEEEeqnnumcols=\count196
+\@IEEEeqncolcnt=\count197
+\@IEEEtmpitemindent=\dimen150
+\c@biography=\count198
+\@IEEEtranrubishbin=\box51
+)
+** ATTENTION: Overriding command lockouts (line 9).
+** ATTENTION: Overriding IEEE standard margins (line 12).
+(D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+)) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/graphics\epsfig.sty
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+\Gin@req@height=\dimen151
+\Gin@req@width=\dimen152
+)
+\epsfxsize=\dimen153
+\epsfysize=\dimen154
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/psnfss\mathptmx.sty
+Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/psnfss\times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip54
+
+For additional information on amsmath, use the `?' option.
+(D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen155
+)) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen156
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count199
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count266
+\leftroot@=\count267
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count268
+\DOTSCASE@=\count269
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen157
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count270
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count271
+\dotsspace@=\muskip16
+\c@parentequation=\count272
+\dspbrk@lvl=\count273
+\tag@help=\toks20
+\row@=\count274
+\column@=\count275
+\maxfields@=\count276
+\andhelp@=\toks21
+\eqnshift@=\dimen158
+\alignsep@=\dimen159
+\tagshift@=\dimen160
+\tagwidth@=\dimen161
+\totwidth@=\dimen162
+\lineht@=\dimen163
+\@envbody=\toks22
+\multlinegap=\skip55
+\multlinetaggap=\skip56
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/multirow\multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip57
+\multirow@cntb=\count277
+\multirow@dima=\skip58
+\bigstrutjot=\dimen164
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen165
+\ar@mcellbox=\box54
+\extrarowheight=\dimen166
+\NC@list=\toks24
+\extratabsurround=\skip59
+\backup@length=\skip60
+\ar@cellbox=\box55
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen167
+\lightrulewidth=\dimen168
+\cmidrulewidth=\dimen169
+\belowrulesep=\dimen170
+\belowbottomsep=\dimen171
+\aboverulesep=\dimen172
+\abovetopsep=\dimen173
+\cmidrulesep=\dimen174
+\cmidrulekern=\dimen175
+\defaultaddspace=\dimen176
+\@cmidla=\count278
+\@cmidlb=\count279
+\@aboverulesep=\dimen177
+\@belowrulesep=\dimen178
+\@thisruleclass=\count280
+\@lastruleclass=\count281
+\@thisrulewidth=\dimen179
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/cite\cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/cjk-ko\kotex.sty
+Package: kotex 2015/04/19 v1.6 Korean TeX (ko.TeX)
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/kotex-utf\kotex.cfg) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/kotex-utf\kotexutf.sty
+Package: kotexutf 2022/06/22 v3.0.0 typesetting UTF-8 Korean documents
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks25
+\inpenc@posthook=\toks26
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/plain/kotex-plain\kotexutf-core.tex
+\unih@ngulpoint=\count282
+\dhucs@emph@raise=\dimen180
+)
+Now handling font encoding LUC ...
+... processing UTF-8 mapping file for font encoding LUC
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/kotex-utf\lucenc.dfu
+File: lucenc.dfu 2007/09/05 UTF-8 support for dhucs
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+3001 (decimal 12289)
+   defining Unicode char U+3002 (decimal 12290)
+   defining Unicode char U+3008 (decimal 12296)
+   defining Unicode char U+3009 (decimal 12297)
+   defining Unicode char U+300A (decimal 12298)
+   defining Unicode char U+300B (decimal 12299)
+   defining Unicode char U+300C (decimal 12300)
+   defining Unicode char U+300D (decimal 12301)
+   defining Unicode char U+300E (decimal 12302)
+   defining Unicode char U+300F (decimal 12303)
+   defining Unicode char U+3010 (decimal 12304)
+   defining Unicode char U+3011 (decimal 12305)
+   defining Unicode char U+3014 (decimal 12308)
+   defining Unicode char U+3015 (decimal 12309)
+   defining Unicode char U+3016 (decimal 12310)
+   defining Unicode char U+3017 (decimal 12311)
+   defining Unicode char U+3018 (decimal 12312)
+   defining Unicode char U+3019 (decimal 12313)
+   defining Unicode char U+301A (decimal 12314)
+   defining Unicode char U+301B (decimal 12315)
+   defining Unicode char U+FF01 (decimal 65281)
+   defining Unicode char U+FF08 (decimal 65288)
+   defining Unicode char U+FF09 (decimal 65289)
+   defining Unicode char U+FF0C (decimal 65292)
+   defining Unicode char U+FF0E (decimal 65294)
+   defining Unicode char U+FF1A (decimal 65306)
+   defining Unicode char U+FF1B (decimal 65307)
+   defining Unicode char U+FF1C (decimal 65308)
+   defining Unicode char U+FF1D (decimal 65309)
+   defining Unicode char U+FF1E (decimal 65310)
+   defining Unicode char U+FF1F (decimal 65311)
+   defining Unicode char U+FF3B (decimal 65339)
+   defining Unicode char U+FF3D (decimal 65341)
+   defining Unicode char U+FF5B (decimal 65371)
+   defining Unicode char U+FF5D (decimal 65373)
+   defining Unicode char U+FF61 (decimal 65377)
+   defining Unicode char U+FF62 (decimal 65378)
+   defining Unicode char U+FF63 (decimal 65379)
+   defining Unicode char U+FF64 (decimal 65380)
+   defining Unicode char U+FF65 (decimal 65381)
+)
+\@josa=\count283
+\josatoks=\toks27
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/cjk-ko\kolabels-utf.sty
+Package: kolabels-utf 2015/03/20 v1.5 UTF-8 Hangul item labels
+))) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count284
+\l__pdf_internal_box=\box56
+) (root_v2.aux)
+\openout1 = `root_v2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 47.
+LaTeX Font Info:    Trying to load font information for LUC+nanummj on input line 47.
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/nanumtype1\lucnanummj.fd
+File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
+)
+LaTeX Font Info:    ... okay on input line 47.
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count285
+\scratchdimen=\dimen181
+\scratchbox=\box57
+\nofMPsegments=\count286
+\nofMParguments=\count287
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count288
+\MPscratchDim=\dimen182
+\MPnumerator=\count289
+\makeMPintoPDFobject=\count290
+\everyMPtoPDFconversion=\toks29
+) (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 51.
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 51.
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/psnfss\ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 51.
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/psnfss\omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 51.
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/psnfss\omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 51.
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/psnfss\omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.14006> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.60007> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 51.
+ (D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+
+LaTeX Warning: Citation `hannink2017cnn' on page 1 undefined on input line 73.
+
+
+LaTeX Warning: Citation `yan2020lstm' on page 1 undefined on input line 73.
+
+
+LaTeX Warning: Citation `chen2013gait' on page 1 undefined on input line 75.
+
+
+LaTeX Warning: Citation `gautam2020myonet' on page 1 undefined on input line 77.
+
+
+LaTeX Warning: Citation `zhang2017lstmtransfer' on page 1 undefined on input line 77.
+
+
+LaTeX Warning: Citation `wei2021mmdemg' on page 1 undefined on input line 77.
+
+
+LaTeX Warning: Citation `zhang2020unsupervisedemg' on page 1 undefined on input line 77.
+
+
+LaTeX Warning: Citation `choi2022dannemg' on page 1 undefined on input line 77.
+
+[1{C:/Users/RSC lab/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/enc/dvips/base/8r.enc}
+
+
+]
+<figure/stroke_exp_setup.png, id=9, 218.7372pt x 166.221pt>
+File: figure/stroke_exp_setup.png Graphic file (type png)
+<use figure/stroke_exp_setup.png>
+Package pdftex.def Info: figure/stroke_exp_setup.png  used on input line 92.
+(pdftex.def)             Requested size: 245.71811pt x 186.72421pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
+<figure/domain_adaptation_v2.png, id=11, 452.892pt x 291.9708pt>
+File: figure/domain_adaptation_v2.png Graphic file (type png)
+<use figure/domain_adaptation_v2.png>
+Package pdftex.def Info: figure/domain_adaptation_v2.png  used on input line 125.
+(pdftex.def)             Requested size: 455.2979pt x 293.52936pt.
+
+
+LaTeX Warning: Citation `perry2010gait' on page 2 undefined on input line 132.
+
+[2 <./figure/stroke_exp_setup.png>] [3 <./figure/domain_adaptation_v2.png>]
+
+LaTeX Warning: Citation `lstm_reference' on page 4 undefined on input line 167.
+
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 209.
+(D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex/latex/psnfss\omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 209.
+
+Overfull \hbox (14.71658pt too wide) in paragraph at lines 205--219
+ [][] 
+ []
+
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 223.
+[4]
+<figure/loss_curve.png, id=33, 426.393pt x 209.583pt>
+File: figure/loss_curve.png Graphic file (type png)
+<use figure/loss_curve.png>
+Package pdftex.def Info: figure/loss_curve.png  used on input line 259.
+(pdftex.def)             Requested size: 245.71811pt x 120.7747pt.
+<figure/combined_tsne_effect.png, id=34, 1408.7832pt x 483.7272pt>
+File: figure/combined_tsne_effect.png Graphic file (type png)
+<use figure/combined_tsne_effect.png>
+Package pdftex.def Info: figure/combined_tsne_effect.png  used on input line 268.
+(pdftex.def)             Requested size: 480.59395pt x 165.01865pt.
+<figure/result_rmse_r2.png, id=35, 722.7pt x 578.16pt>
+File: figure/result_rmse_r2.png Graphic file (type png)
+<use figure/result_rmse_r2.png>
+Package pdftex.def Info: figure/result_rmse_r2.png  used on input line 280.
+(pdftex.def)             Requested size: 245.71811pt x 196.5718pt.
+<figure/gaitphase_time_domain.png, id=36, 722.7pt x 289.08pt>
+File: figure/gaitphase_time_domain.png Graphic file (type png)
+<use figure/gaitphase_time_domain.png>
+Package pdftex.def Info: figure/gaitphase_time_domain.png  used on input line 287.
+(pdftex.def)             Requested size: 196.57523pt x 78.63048pt.
+ [5 <./figure/loss_curve.png>] [6 <./figure/combined_tsne_effect.png> <./figure/result_rmse_r2.png> <./figure/gaitphase_time_domain.png>] (root_v2.bbl)
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the US letter (8.5in X 11in) paper size.
+
+[7
+
+] (root_v2.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4180 strings out of 474485
+ 68089 string characters out of 5742753
+ 1950542 words of memory out of 5000000
+ 26368 multiletter control sequences out of 15000+600000
+ 626636 words of font info for 175 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 59i,11n,65p,1562b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/public/rsfs/rsfs10.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/urw/courier/ucrr8a.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/urw/symbol/usyr.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/urw/symbol/usyr.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/urw/times/utmb8a.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/urw/times/utmbi8a.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/urw/times/utmr8a.pfb><D:/Users/RSC lab/AppData/Local/Programs/MikTex/fonts/type1/urw/times/utmri8a.pfb>
+Output written on root_v2.pdf (7 pages, 2568626 bytes).
+PDF statistics:
+ 110 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+

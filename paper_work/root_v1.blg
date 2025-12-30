@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: root_v1.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: IEEEtran.bst
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+Reallocating 'name_of_file' (item size: 1) to 4 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: IEEEabrv.bib
+Database file #2: ref.bib
+Warning--I didn't find a database entry for "hannink2017cnn"
+Warning--I didn't find a database entry for "yan2020lstm"
+Warning--I didn't find a database entry for "?"
+Warning--I didn't find a database entry for "gautam2020myonet"
+Warning--I didn't find a database entry for "zhang2017lstmtransfer"
+Warning--I didn't find a database entry for "wei2021mmdemg"
+Warning--I didn't find a database entry for "zhang2020unsupervisedemg"
+Warning--I didn't find a database entry for "choi2022dannemg"
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "lstm_reference"
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 5 entries,
+            4087 wiz_defined-function locations,
+            1385 strings with 19023 characters,
+and the built_in function-call counts, 4622 in all, are:
+= -- 382
+> -- 113
+< -- 44
++ -- 62
+- -- 19
+* -- 237
+:= -- 679
+add.period$ -- 11
+call.type$ -- 5
+change.case$ -- 5
+chr.to.int$ -- 96
+cite$ -- 5
+duplicate$ -- 320
+empty$ -- 332
+format.name$ -- 24
+if$ -- 1068
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 53
+newline$ -- 38
+num.names$ -- 5
+pop$ -- 112
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 356
+stack$ -- 0
+substring$ -- 241
+swap$ -- 283
+text.length$ -- 12
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 5
+warning$ -- 0
+while$ -- 22
+width$ -- 6
+write$ -- 74
+(There were 10 warnings)

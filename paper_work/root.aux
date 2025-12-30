@@ -1,0 +1,54 @@
+\relax 
+\citation{hannink2017cnn}
+\citation{yan2020lstm}
+\citation{?}
+\citation{zhao2019harl}
+\citation{mou2021transferEMG}
+\citation{rajpurkar2017chexnet}
+\@writefile{toc}{\contentsline {section}{\numberline {I}INTRODUCTION}{1}{}\protected@file@percent }
+\citation{camargo2021comprehensive}
+\citation{camargo2021comprehensive}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Experimental setup for collecting post-stroke gait data. (a) Subjects walked on a force plate-instrumented treadmill while wearing a safety harness. (b) The placement of IMUs on the lower limbs and trunk.}}{2}{}\protected@file@percent }
+\newlabel{fig: stroke experiment setup}{{1}{2}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Methods}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {II-A}Dataset Construction}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {II-A.1}Target domain dataset}{2}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Summary of source and target domain datasets}}{2}{}\protected@file@percent }
+\newlabel{tab:dataset_summary}{{I}{2}{}{table.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {II-A.2}Source domain dataset}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {II-B}Sensor Selection and Data Pre-processing}{2}{}\protected@file@percent }
+\citation{kang2019real}
+\citation{lstm_reference}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Proposed framework for gait phase estimation via supervised domain adaptation. A shared LSTM feature extractor learns from both source and target domains, while domain-specific regressors predict continuous gait phase values. MMD loss is used to align the latent feature distributions across domains during training.}}{3}{}\protected@file@percent }
+\newlabel{fig: transfer learning}{{2}{3}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {II-C}Gait Phase Estimation Model via Supervised Domain Adaptation}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {II-C.1}Framework Overview}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {II-C.2}Loss Functions}{4}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Grid search ranges and optimized values for key hyperparameters}}{4}{}\protected@file@percent }
+\newlabel{tab:hyperparam_grid}{{II}{4}{}{table.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {II-C.3}Hyperparameter Tuning}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces t-SNE visualization of latent features from source and target domains. The clear separation indicates a domain gap in feature distribution.}}{5}{}\protected@file@percent }
+\newlabel{fig:domain_gap_tsne}{{3}{5}{}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {II-D}Baseline Methods}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {II-D.1}Source Only (SO)}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {II-D.2}Target Only (TO)}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {II-D.3}Target with Data Augmentation (TA)}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Results}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {III-A}Domain Gap in Raw Gait Data between Non-Disabled and Post-Stroke Subjects}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Training loss components over epochs. Source and target regression losses decrease steadily, while MMD loss ensures domain alignment. Total loss (dashed) is the weighted sum of all components.}}{5}{}\protected@file@percent }
+\newlabel{fig:loss_curve}{{4}{5}{}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {III-B}Loss Dynamics During Training}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {III-C}Gait Phase Estimation Performance}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Gait phase estimation performance evaluated on post-stroke subjects. (a) Root Mean Squared Error (RMSE) in predicted phase. (b) Coefficient of determination ($R^2$) for regression accuracy.}}{6}{}\protected@file@percent }
+\newlabel{fig:gait_phase_estimation_performance}{{5}{6}{}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Gait phase estimation performance evaluated on post-stroke subjects in (a) phase space and (b) time domain.}}{6}{}\protected@file@percent }
+\newlabel{fig:gaitphase_time_domain}{{6}{6}{}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {III-D}Real-time Inference Evaluation on Edge Device}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Discussion}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusion}{6}{}\protected@file@percent }
+\bibstyle{IEEEtran}
+\bibdata{IEEEabrv,ref}
+\bibcite{camargo2021comprehensive}{1}
+\bibcite{kang2019real}{2}
+\@writefile{toc}{\contentsline {section}{References}{7}{}\protected@file@percent }
+\gdef \@abspage@last{7}

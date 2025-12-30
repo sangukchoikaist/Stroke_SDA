@@ -1,0 +1,344 @@
+PWD d:\RSC lab\Codes\Stroke_SDA\paper_work
+INPUT C:\Users\RSC lab\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT d:\RSC lab\Codes\Stroke_SDA\paper_work\root_v2.tex
+OUTPUT root_v2.log
+INPUT .\ieeeconf.cls
+INPUT ieeeconf.cls
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\ot1ptm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\ot1ptm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\ot1ptm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmbi7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmbi7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmbi7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmbi7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmbi7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmbi7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmbi7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmbi7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmbi7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmbi7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics\graphics.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics\graphics.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics\trig.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics\trig.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics-cfg\graphics.cfg
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics-cfg\graphics.cfg
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics-cfg\graphics.cfg
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics-def\pdftex.def
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics-def\pdftex.def
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics-def\pdftex.def
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics\epsfig.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics\epsfig.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics\graphicx.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics\graphicx.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics\keyval.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\graphics\keyval.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\mathptmx.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\mathptmx.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\times.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\times.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsmath\amsmath.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsmath\amsmath.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsmath\amsopn.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsmath\amstext.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsmath\amstext.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsmath\amsgen.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsmath\amsgen.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsmath\amsbsy.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsmath\amsbsy.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsmath\amsopn.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsfonts\amssymb.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsfonts\amssymb.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsfonts\amsfonts.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\amsfonts\amsfonts.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\multirow\multirow.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\multirow\multirow.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\tools\array.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\tools\array.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\booktabs\booktabs.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\booktabs\booktabs.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\cite\cite.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\cite\cite.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\cjk-ko\kotex.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\cjk-ko\kotex.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\kotex-utf\kotexutf.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\kotex-utf\kotexutf.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\kotex-utf\kotex.cfg
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\kotex-utf\kotex.cfg
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\kotex-utf\kotex.cfg
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\kotex-utf\kotexutf.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\base\inputenc.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\base\inputenc.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\plain\kotex-plain\kotexutf-core.tex
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\kotex-utf\hfontspec.default
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\kotex-utf\lucenc.dfu
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\kotex-utf\lucenc.dfu
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\kotex-utf\lucenc.dfu
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\cjk-ko\kolabels-utf.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\cjk-ko\kolabels-utf.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\l3backend\l3backend-pdftex.def
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\l3backend\l3backend-pdftex.def
+INPUT .\root_v2.aux
+INPUT .\root_v2.aux
+INPUT root_v2.aux
+OUTPUT root_v2.aux
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\nanumtype1\lucnanummj.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\nanumtype1\lucnanummj.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\nanumtype1\lucnanummj.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\context\base\mkii\supp-pdf.mkii
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\context\base\mkii\supp-pdf.mkii
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\context\base\mkii\supp-pdf.mkii
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\epstopdf-pkg\epstopdf-base.sty
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\ot1ztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\ot1ztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\ot1ztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omlztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omlztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omlztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omsztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omsztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omsztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omxztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omxztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omxztmcm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\ot1pcr.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\ot1pcr.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\ot1pcr.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\courier\pcrr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\courier\pcrr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmrc7t.tfm
+OUTPUT root_v2.pdf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmb7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Users\RSC lab\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\enc\dvips\base\8r.enc
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmr7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\zptmcm7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\cm\cmr10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmbi7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmbi8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmb7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmrc7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmr7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\zptmcm7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\cm\cmr10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmr7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\courier\pcrr7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\courier\pcrr8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmb7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT .\figure\stroke_exp_setup.png
+INPUT .\figure\stroke_exp_setup.png
+INPUT .\figure\stroke_exp_setup.png
+INPUT .\figure\stroke_exp_setup.png
+INPUT .\figure\stroke_exp_setup.png
+INPUT .\figure\stroke_exp_setup.png
+INPUT .\figure\stroke_exp_setup.png
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmrc7t.tfm
+INPUT .\figure\domain_adaptation_v2.png
+INPUT .\figure\domain_adaptation_v2.png
+INPUT .\figure\domain_adaptation_v2.png
+INPUT .\figure\domain_adaptation_v2.png
+INPUT .\figure\domain_adaptation_v2.png
+INPUT .\figure\domain_adaptation_v2.png
+INPUT .\figure\domain_adaptation_v2.png
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmri7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmrc7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmb7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\zptmcm7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\zptmcm7m.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\psyro.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\zptmcm7y.vf
+INPUT C:\Users\RSC lab\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\zptmcm7m.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\psyro.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\cm\cmmi10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\zptmcm7y.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\cm\cmsy10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Users\RSC lab\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\zptmcm7t.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\cm\cmr10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\zptmcm7m.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\psyro.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\cm\cmmi10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omsptm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omsptm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\tex\latex\psnfss\omsptm.fd
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\cm\cmsy8.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\zptmcm7v.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\cm\cmex10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\symbol\psyr.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\zptmcm7m.vf
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\psyro.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\public\cm\cmmi10.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmr7t.vf
+INPUT .\figure\loss_curve.png
+INPUT .\figure\loss_curve.png
+INPUT .\figure\loss_curve.png
+INPUT .\figure\loss_curve.png
+INPUT .\figure\loss_curve.png
+INPUT .\figure\loss_curve.png
+INPUT .\figure\loss_curve.png
+INPUT .\figure\combined_tsne_effect.png
+INPUT .\figure\combined_tsne_effect.png
+INPUT .\figure\combined_tsne_effect.png
+INPUT .\figure\combined_tsne_effect.png
+INPUT .\figure\combined_tsne_effect.png
+INPUT .\figure\combined_tsne_effect.png
+INPUT .\figure\combined_tsne_effect.png
+INPUT .\figure\result_rmse_r2.png
+INPUT .\figure\result_rmse_r2.png
+INPUT .\figure\result_rmse_r2.png
+INPUT .\figure\result_rmse_r2.png
+INPUT .\figure\result_rmse_r2.png
+INPUT .\figure\result_rmse_r2.png
+INPUT .\figure\result_rmse_r2.png
+INPUT .\figure\gaitphase_time_domain.png
+INPUT .\figure\gaitphase_time_domain.png
+INPUT .\figure\gaitphase_time_domain.png
+INPUT .\figure\gaitphase_time_domain.png
+INPUT .\figure\gaitphase_time_domain.png
+INPUT .\figure\gaitphase_time_domain.png
+INPUT .\figure\gaitphase_time_domain.png
+INPUT .\root_v2.bbl
+INPUT .\root_v2.bbl
+INPUT root_v2.bbl
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\vf\adobe\times\ptmri7t.vf
+INPUT root_v2.aux
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\rsfs\rsfs10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\public\rsfs\rsfs10.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\courier\ucrr8a.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\courier\ucrr8a.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\symbol\usyr.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\symbol\usyr.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\symbol\usyr.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\symbol\usyr.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\times\utmb8a.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\times\utmb8a.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\times\utmbi8a.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\times\utmbi8a.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\times\utmr8a.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\times\utmr8a.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\times\utmri8a.pfb
+INPUT D:\Users\RSC lab\AppData\Local\Programs\MikTex\fonts\type1\urw\times\utmri8a.pfb
